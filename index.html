@@ -325,7 +325,7 @@
   /* ---------- DONATE ---------- */
   .donate-section{background:var(--black);}
   .donate-methods{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;
   }
   .method-card{
     border:1px solid var(--line);padding:34px 18px;text-align:center;border-radius:2px;
@@ -636,19 +636,19 @@
     <div class="stats-grid reveal">
       <div class="stat">
         <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label">Widows supported<br><span class="placeholder-tag" style="font-size:10.5px;">to be confirmed</span></div>
+        <div class="stat-label">Widows supported</div>
       </div>
       <div class="stat">
         <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label">Children sponsored<br><span class="placeholder-tag" style="font-size:10.5px;">to be confirmed</span></div>
+        <div class="stat-label">Children sponsored</div>
       </div>
       <div class="stat">
         <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label">Countries reached<br><span class="placeholder-tag" style="font-size:10.5px;">to be confirmed</span></div>
+        <div class="stat-label">Countries reached</div>
       </div>
       <div class="stat">
         <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label">Active partnerships<br><span class="placeholder-tag" style="font-size:10.5px;">to be confirmed</span></div>
+        <div class="stat-label">Active partnerships</div>
       </div>
     </div>
   </div>
@@ -659,7 +659,7 @@
   <div class="wrap reveal">
     <div class="eyebrow" style="justify-content:center;">A Story of Hope</div>
     <blockquote>It's not how much we give, but how much love we put into giving.</blockquote>
-    <cite>— Mother Teresa</cite>
+    <cite>Mother Teresa</cite>
   </div>
 </section>
 
@@ -670,11 +670,7 @@
     <h2 class="section-title reveal">Select how you'd<br><em>like to give.</em></h2>
     <p class="section-lede reveal">Every gift — large or small — goes directly toward emergency relief, education, healthcare, and livelihood training for widows and orphans.</p>
     <div class="donate-methods reveal">
-      <div class="method-card" onclick="openModal('card')">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-        <h5>Credit Card</h5>
-        <p>One-time or monthly</p>
-      </div>
+      
       <div class="method-card" onclick="openModal('paypal')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 17l1.5-11h6c2.5 0 4 1.5 3.6 4-.4 2.7-2.5 4-5 4H9.5L9 17z"/></svg>
         <h5>PayPal</h5>
@@ -777,24 +773,15 @@
     <h3>Make a Donation</h3>
     <p>Choose a method below. This is a working prototype — real payment processing will be connected once accounts are set up.</p>
     <div class="modal-tabs">
-      <button class="tab-btn active" data-tab="card">Card</button>
-      <button class="tab-btn" data-tab="paypal">PayPal</button>
+      
+      <button class="tab-btn active" data-tab="paypal">PayPal</button>
       <button class="tab-btn" data-tab="bank">Bank Transfer</button>
       <button class="tab-btn" data-tab="mobile">QR / Mobile</button>
     </div>
 
-    <div class="modal-panel active" data-panel="card">
-      <p style="margin-bottom:8px;">Choose an amount (CHF):</p>
-      <div class="amount-row">
-        <button class="amt-btn">20</button>
-        <button class="amt-btn active">50</button>
-        <button class="amt-btn">100</button>
-        <button class="amt-btn">250</button>
-      </div>
-      <button class="modal-submit">Continue to Payment</button>
-    </div>
+    
 
-    <div class="modal-panel" data-panel="paypal">
+    <div class="modal-panel active" data-panel="paypal">
       <p>Click below to donate securely via PayPal to <strong style="color:var(--gold-light)">judmaria9@gmail.com</strong></p>
       <button class="modal-submit" onclick="window.open('https://www.paypal.com/paypalme/judmaria9','_blank')">Donate with PayPal</button>
     </div>
@@ -858,7 +845,7 @@ Country: Switzerland`;
   const overlay = document.getElementById('modalOverlay');
   function openModal(method){
     overlay.classList.add('open');
-    if(method){ setTab(method); }
+    setTab(method || 'paypal');
   }
   function closeModal(){ overlay.classList.remove('open'); }
   overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
