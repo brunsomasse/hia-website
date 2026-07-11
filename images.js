@@ -8,7 +8,7 @@
  * To use a completely different filename:
  *   1. Upload the new file to /images/
  *   2. Update the path string below
- *   3. Save this file and push to GitHub
+ *   3. Save and deploy
  */
 
 const HIA_IMAGES = {
@@ -41,9 +41,10 @@ const HIA_IMAGES = {
 };
 
 // ---- Apply images to the page ----
-document.addEventListener("DOMContentLoaded", function () {
+// Runs immediately (script is loaded at bottom of body, DOM is already ready)
+(function applyImages() {
 
-  // Logo (all instances)
+  // Logo (all instances — header, hero, footer)
   document.querySelectorAll("img.hia-logo").forEach(function (el) {
     el.src = HIA_IMAGES.logo;
   });
@@ -61,4 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-});
+})();
