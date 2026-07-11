@@ -1,0 +1,5 @@
+# Redirect www to non-www
+https://www.hope-international-association.com/* https://hope-international-association.com/:splat 301!
+
+# Fallback to index for any unmatched routes
+/*    /index.html   200
