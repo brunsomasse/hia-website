@@ -1,6 +1,6 @@
 # Security & performance headers for all pages
 /*
-  X-Frame-Options: DENY
+  X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
@@ -18,3 +18,9 @@
 # No cache for HTML — always fresh
 /*.html
   Cache-Control: no-cache, no-store, must-revalidate
+
+# Video files — correct MIME type for streaming
+/videos/*
+  Content-Type: video/mp4
+  Cache-Control: public, max-age=86400
+  Accept-Ranges: bytes
