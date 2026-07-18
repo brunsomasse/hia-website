@@ -3,37 +3,38 @@
  * ===================================
  * To update any image:
  *   1. Add the new file to the /images/ folder (same filename)
- *   2. That's it — no changes to index.html needed.
+ *   2. Bump the CACHE_VERSION number below (e.g. v3 → v4)
+ *   3. Save and deploy — all browsers will fetch the new images
  *
  * To use a completely different filename:
  *   1. Upload the new file to /images/
  *   2. Update the path string below
- *   3. Save and deploy
+ *   3. Bump CACHE_VERSION and deploy
  */
+
+// Bump this number every time you update any image
+const CACHE_VERSION = "v4";
 
 const HIA_IMAGES = {
 
   // Logo — displayed in header, hero, and footer
-  // Recommended: PNG with transparent background, min 400px wide
-  logo: "images/logo.png",
+  logo: `images/logo.png?${CACHE_VERSION}`,
 
   // HIA Donate banner — full-width image at top of gallery section
-  // Recommended: landscape JPG/PNG, min 1200px wide
-  hiaDonate: "images/hia-donate.jpg",
+  hiaDonate: `images/hia-donate.jpg?${CACHE_VERSION}`,
 
   // Gallery images — displayed in the 3-column grid below the banner
-  // Recommended: landscape JPG, min 900px wide, 4:3 ratio works best
   gallery: [
     {
-      src: "images/gallery-community.jpg",
+      src: `images/gallery-community.jpg?${CACHE_VERSION}`,
       alt: "H.I.A community — families and volunteers"
     },
     {
-      src: "images/gallery-education.jpg",
+      src: `images/gallery-education.jpg?${CACHE_VERSION}`,
       alt: "H.I.A education — children in class"
     },
     {
-      src: "images/gallery-care.jpg",
+      src: `images/gallery-care.jpg?${CACHE_VERSION}`,
       alt: "H.I.A care — mother and child"
     }
   ]
@@ -41,7 +42,6 @@ const HIA_IMAGES = {
 };
 
 // ---- Apply images to the page ----
-// Runs immediately (script is loaded at bottom of body, DOM is already ready)
 (function applyImages() {
 
   // Logo (all instances — header, hero, footer)
