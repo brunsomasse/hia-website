@@ -1226,6 +1226,8 @@ Country: Switzerland`;
   function openModal(method){
     overlay.classList.add('open');
     setTab(method || 'card');
+    // Initialize Stripe immediately when modal opens
+    setTimeout(initStripe, 100);
   }
   function closeModal(){ overlay.classList.remove('open'); }
   overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
@@ -1340,7 +1342,11 @@ Country: Switzerland`;
 
   async function handleStripePayment(){
     if(!stripe || !cardElement){
-      alert('Please wait for the card form to load.');
+      // Stripe still loading — try to init and retry
+      initStripe();
+      const btn = document.getElementById('stripePayBtn');
+      btn.textContent = 'Loading card form...';
+      setTimeout(() => { btn.textContent = 'Pay with Card'; btn.disabled = false; }, 2000);
       return;
     }
     const activeAmt = document.querySelector('.amt-btn.active');
@@ -1385,7 +1391,8 @@ Country: Switzerland`;
     }
   }
 
-  // Init stripe when card tab is opened
+  // Init stripe on page load and when card tab is opened
+  window.addEventListener('load', () => setTimeout(initStripe, 500));
   document.querySelectorAll('.tab-btn').forEach(b => {
     b.addEventListener('click', () => {
       if(b.dataset.tab === 'card') initStripe();
