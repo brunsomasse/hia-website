@@ -1,6 +1,3 @@
-// HIA Website — Stripe Payment Intent Function
-// Uses native https module — no npm install required
-
 const https = require('https');
 
 function stripeRequest(path, data, secretKey) {
@@ -50,7 +47,8 @@ exports.handler = async (event) => {
       {
         amount: amountInCents,
         currency: currency || 'chf',
-        'automatic_payment_methods[enabled]': 'true',
+        // Explicitly specify card as payment method type
+        'payment_method_types[]': 'card',
         'metadata[organization]': 'Hope International Association',
         'metadata[registration]': '482.5.021.9302'
       },
