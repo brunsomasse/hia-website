@@ -744,7 +744,7 @@
 <!-- ============ GDPR COOKIE BANNER ============ -->
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" style="display:none;">
   <div class="cookie-inner">
-    <p>We use cookies to ensure the best experience on our website. By continuing to browse, you agree to our use of cookies in accordance with Swiss and EU privacy regulations.
+    <p>We use cookies to improve your experience on this site, in line with Swiss and EU privacy rules.
       <a href="#" style="color:var(--gold-light);">Learn more</a>
     </p>
     <div class="cookie-btns">
@@ -1000,7 +1000,7 @@
       </div>
     </div>
     <div class="donate-legal reveal">
-      Hope International Association (H.I.A) is a registered nonprofit organization based in Switzerland (Reg. No. 482.5.021.9302). Donations processed via PostFinance (IBAN: CH05 0900 0000 1679 9930 3) or PayPal (judmaria9@gmail.com).. Contact us for a donation receipt.
+      Hope International Association (H.I.A) is a registered nonprofit organization based in Switzerland (Reg. No. 482.5.021.9302). Donations processed via PostFinance (IBAN: CH05 0900 0000 1679 9930 3) or PayPal (judmaria9@gmail.com). Contact us for a donation receipt.
     </div>
   </div>
 </section>
@@ -1065,7 +1065,7 @@
           </div>
           <div class="form-group">
             <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="5" placeholder="Your message..." required></textarea>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Your message" required></textarea>
           </div>
           <input type="hidden" name="_subject" value="New message from HIA website">
           <input type="hidden" name="_replyto" value="judmaria9@gmail.com">
@@ -1074,7 +1074,7 @@
             ✓ Message sent! We'll be in touch within 48 hours.
           </div>
           <div id="formError" class="form-error" style="display:none;">
-            Something went wrong. Please email us directly at judmaria9@gmail.com
+            Your message didn't go through. Please email us directly at judmaria9@gmail.com and we'll respond within 48 hours.
           </div>
         </form>
       </div>
@@ -1164,7 +1164,7 @@
     </div>
 
     <div class="modal-panel" data-panel="paypal">
-      <p><span data-i18n="modal-paypal-p">Click below to donate securely via PayPal to</span> <strong style="color:var(--gold-light)">judmaria9@gmail.com</strong></p>
+      <p><span data-i18n="modal-paypal-p">Donate securely via PayPal to</span> <strong style="color:var(--gold-light)">judmaria9@gmail.com</strong></p>
       <button class="modal-submit" onclick="window.open('https://www.paypal.com/paypalme/judmaria9','_blank')" data-i18n="modal-paypal-btn">Donate with PayPal</button>
     </div>
 
@@ -1182,7 +1182,7 @@
     </div>
 
     <div class="modal-panel" data-panel="mobile">
-      <p>Scan the QR code with your banking or payment app to give instantly.</p>
+      <p>Send instantly via PayPal or bank transfer using the details below.</p>
       <div style="display:flex;justify-content:center;padding:20px 0;">
         <div style="text-align:center;padding:10px 0;">
         <p style="font-size:13px;color:var(--gold-light);margin-bottom:12px;">PayPal: judmaria9@gmail.com</p>
@@ -1218,8 +1218,10 @@ Country: Switzerland`;
   function toggleDrawer(open){
     drawer.classList.toggle('open', open);
     scrim.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
   }
-  menuToggle.addEventListener('click', () => toggleDrawer(true));
+  menuToggle.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('open')));
   scrim.addEventListener('click', () => toggleDrawer(false));
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
 
@@ -1261,7 +1263,7 @@ Country: Switzerland`;
 
   // count-up stats
   const statsEls = document.querySelectorAll('.stat-num');
-  const targets = [204, 850, 6, 12]; // sample placeholder figures to demonstrate the animation
+  const targets = [204, 850, 6, 12]; // widows supported, children sponsored, countries reached, active partnerships
   let counted = false;
   const statsSection = document.querySelector('.stats');
   const statIO = new IntersectionObserver((entries) => {
@@ -1375,7 +1377,7 @@ Country: Switzerland`;
       });
 
       if (error) {
-        errDiv.textContent = error.message;
+        errDiv.textContent = error.message || "Your card couldn't be charged. Please check your details and try again.";
         btn.disabled = false;
         btn.textContent = 'Pay with Card';
       } else if (paymentIntent.status === 'succeeded') {
@@ -1387,7 +1389,7 @@ Country: Switzerland`;
         setTimeout(() => closeModal(), 3000);
       }
     } catch(err) {
-      errDiv.textContent = 'Something went wrong. Please try PayPal or Bank Transfer.';
+      errDiv.textContent = "We couldn't process your card. You haven't been charged — please try PayPal or Bank Transfer instead.";
       btn.disabled = false;
       btn.textContent = 'Pay with Card';
     }
@@ -1417,15 +1419,6 @@ Country: Switzerland`;
       document.getElementById('cookieBanner').style.display='block';
     }, 1500);
   }
-
-  // ---- ARIA EXPANDED on mobile menu ----
-  menuToggle.addEventListener('click', () => {
-    const expanded = drawer.classList.contains('open');
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
-  });
-  scrim.addEventListener('click', () => {
-    menuToggle.setAttribute('aria-expanded', 'false');
-  });
 
   // ---- STAGGERED CARD REVEAL ----
   const cardEls = document.querySelectorAll('.reveal-card');
@@ -1523,7 +1516,7 @@ Country: Switzerland`;
       'modal-tab-paypal': `PayPal`,
       'modal-tab-bank': `Bank Transfer`,
       'modal-tab-mobile': `QR / Mobile`,
-      'modal-paypal-p': `Click below to donate securely via PayPal to`,
+      'modal-paypal-p': `Donate securely via PayPal to`,
       'modal-paypal-btn': `Donate with PayPal`,
       'modal-bank-btn': `Copy Bank Details`,
       'modal-mobile-p': `Scan with PayPal or banking app:`,
@@ -1611,7 +1604,7 @@ Country: Switzerland`;
       'modal-tab-paypal': `PayPal`,
       'modal-tab-bank': `Virement bancaire`,
       'modal-tab-mobile': `QR / Mobile`,
-      'modal-paypal-p': `Cliquez ci-dessous pour donner en toute sécurité via PayPal à`,
+      'modal-paypal-p': `Donnez en toute sécurité via PayPal à`,
       'modal-paypal-btn': `Donner via PayPal`,
       'modal-bank-btn': `Copier les coordonnées bancaires`,
       'modal-mobile-p': `Scannez avec PayPal ou votre application bancaire :`,
@@ -1700,7 +1693,7 @@ Country: Switzerland`;
       'modal-tab-paypal': `PayPal`,
       'modal-tab-bank': `Bonifico bancario`,
       'modal-tab-mobile': `QR / Mobile`,
-      'modal-paypal-p': `Clicca qui sotto per donare in modo sicuro tramite PayPal a`,
+      'modal-paypal-p': `Dona in modo sicuro tramite PayPal a`,
       'modal-paypal-btn': `Dona con PayPal`,
       'modal-bank-btn': `Copia i dati bancari`,
       'modal-mobile-p': `Scansiona con PayPal o la tua app bancaria:`,
@@ -1786,7 +1779,7 @@ Country: Switzerland`;
       'modal-tab-paypal': `PayPal`,
       'modal-tab-bank': `Transferencia bancaria`,
       'modal-tab-mobile': `QR / Movil`,
-      'modal-paypal-p': `Haz clic abajo para donar de forma segura a traves de PayPal a`,
+      'modal-paypal-p': `Dona de forma segura a traves de PayPal a`,
       'modal-paypal-btn': `Donar con PayPal`,
       'modal-bank-btn': `Copiar datos bancarios`,
       'modal-mobile-p': `Escanea con PayPal o tu aplicacion bancaria:`,
