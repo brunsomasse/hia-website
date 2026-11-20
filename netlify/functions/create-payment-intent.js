@@ -31,7 +31,7 @@ exports.handler = async (event) => {
 
   const secretKey = process.env.STRIPE_SECRET_KEY;
   if (!secretKey) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'Stripe not configured' }) };
+    return { statusCode: 500, body: JSON.stringify({ error: "Card payments aren't available right now — please use PayPal or Bank Transfer." }) };
   }
 
   try {
@@ -39,7 +39,7 @@ exports.handler = async (event) => {
     const amountInCents = Math.round(parseFloat(amount) * 100);
 
     if (!amountInCents || amountInCents < 100) {
-      return { statusCode: 400, body: JSON.stringify({ error: 'Invalid amount' }) };
+      return { statusCode: 400, body: JSON.stringify({ error: 'Please enter an amount of at least CHF 1.' }) };
     }
 
     const paymentIntent = await stripeRequest(

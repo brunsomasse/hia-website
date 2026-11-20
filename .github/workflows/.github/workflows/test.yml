@@ -1,0 +1,17 @@
+name: Test Local RHEL Runner
+
+on: [push]
+
+jobs:
+  test-on-rhel:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a diagnostic command
+        run: |
+          echo "Running on local RHEL host!"
+          uname -a
+          hostname
+          uptime
