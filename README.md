@@ -25,16 +25,17 @@
 
 ## Project Overview
 
-This is the official website for **Hope International Association (H.I.A)**, a single-file static site with no build step required. It features:
+This is the official website for **Hope International Association (H.I.A)**, a static site with no build step required. It features:
 
-- Bilingual support (EN / FR) with a live toggle
-- Multi-method donation modal (PayPal, Bank Transfer, QR/Mobile)
-- Animated impact statistics
+- Four-language support (EN / FR / IT / ES) with a live toggle
+- Donation options for card, PayPal, and bank transfer
+- Impact figures held back until H.I.A. can publish sourced numbers
 - Photo gallery with externalized image management
-- Contact form (Formspree-ready)
-- Stripe card payment integration (activation-ready)
-- GDPR cookie consent banner
-- Fully responsive and accessible (ARIA, skip links, keyboard navigation)
+- Contact form connected to Formspree
+- Stripe card payment flow (requires `STRIPE_SECRET_KEY` in Netlify)
+- Analytics choice banner with a working privacy and cookie information page
+- Responsive layouts with keyboard-operable navigation, donation dialogs, skip links, and live form feedback
+- Optional audience analytics with an essential-only choice; video and card-payment scripts load when requested
 
 ---
 
@@ -58,8 +59,11 @@ This is the official website for **Hope International Association (H.I.A)**, a s
 
 ```
 hia-website/
-├── index.html              # Main site — all HTML, CSS, and JS
+├── index.html              # Main site markup
+├── styles.css              # Site styling and responsive layouts
+├── main.js                 # Site interactions, translations, and payment UI
 ├── images.js               # Image configuration — edit here to swap images
+├── privacy.html            # Privacy and cookie details
 ├── 404.html                # Custom branded 404 error page
 ├── _redirects              # Netlify redirect rules (www → non-www)
 ├── _headers                # Netlify security & cache headers
@@ -167,10 +171,10 @@ The following require client-provided credentials to activate:
 | Feature | Status | What's needed |
 |---|---|---|
 | Custom domain | ⏳ Pending DNS | Openprovider DNS access |
-| Contact form | ⏳ Pending | Formspree form ID → replace `FORMSPREE_ID` in `index.html` |
-| Card payments | ⏳ Pending | Stripe publishable key → replace `YOUR_STRIPE_PUBLISHABLE_KEY` in `index.html` |
-| Beneficiary testimonial | ⏳ Pending | Real quote + name + country from HIA team |
-| Partner logos | ⏳ Pending | PNG logos from confirmed partners |
+| Contact form | Connected in the page | Confirm Formspree delivery and response handling before launch |
+| Card payments | Front end configured | Set `STRIPE_SECRET_KEY` in Netlify and confirm a complete test payment before accepting donations |
+| Beneficiary story | Not displayed | Add only with H.I.A.-approved text, attribution, and consent |
+| Partners | None currently | No partner section or logos are shown |
 
 ---
 

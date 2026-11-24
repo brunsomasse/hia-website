@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Hope International Association's website handles contact, donation, video, analytics, and preference data.">
+  <title>Privacy and cookie details — Hope International Association</title>
+  <style>
+    :root{color-scheme:dark;--bg:#060d1e;--panel:#0d1a30;--text:#e0e8f8;--muted:#aab9d4;--gold:#f1d98a;--line:rgba(138,160,200,.28)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,sans-serif}
+    header,main,footer{width:min(860px,calc(100% - 40px));margin:auto}header{padding:26px 0;border-bottom:1px solid var(--line)}
+    a{color:var(--gold)}a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+    main{padding:56px 0 72px}h1,h2{line-height:1.2}h1{font-size:clamp(2rem,6vw,3.4rem);margin:0 0 12px}h2{font-size:1.4rem;margin-top:36px}
+    p,li{color:var(--muted)}section{border-bottom:1px solid var(--line);padding-bottom:14px}.back{font-size:.95rem}footer{padding:20px 0 34px;border-top:1px solid var(--line);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header><a class="back" href="index.html">← Hope International Association</a></header>
+  <main>
+    <h1>Privacy and cookie details</h1>
+    <p>This page describes the third-party services and browser storage used by this website. It reflects the current site implementation; it is not a statement about those providers' retention periods or a legal-compliance certification.</p>
+
+    <section>
+      <h2 id="information">Information you submit</h2>
+      <p>The contact form asks for your name, email address, subject, and message. Submitting it sends those fields to Formspree so H.I.A. can receive and respond to your message. You can also contact H.I.A. directly at <a href="mailto:hopeinternationalassociation@gmail.com">hopeinternationalassociation@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>Donations and payments</h2>
+      <p>Choosing card payment loads Stripe.js and Stripe's hosted card-entry field. The site sends the selected amount and currency to its Netlify payment function, which requests a payment intent from Stripe. Card details are entered into Stripe's field and are not handled by the contact form. PayPal donations open PayPal in a separate tab; bank transfers are completed through your bank.</p>
+      <p>See <a href="https://stripe.com/privacy" rel="noopener noreferrer">Stripe's privacy information</a> and <a href="https://www.paypal.com/us/legalhub/privacy-full" rel="noopener noreferrer">PayPal's privacy statement</a> for their handling of information.</p>
+    </section>
+
+    <section>
+      <h2>Video and fonts</h2>
+      <p>The H.I.A. video is not requested until you activate its load button. It is then served through YouTube's privacy-enhanced embed domain. Google Fonts are requested to display the site's typefaces.</p>
+      <p>See <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google's privacy policy</a> for information about Google services.</p>
+    </section>
+
+    <section>
+      <h2 id="cookies">Browser storage and optional analytics</h2>
+      <p>The site uses browser local storage to remember your selected language and your analytics choice. “Essential only” stores that choice and does not load the audience analytics SDK. If you allow analytics, the site loads Grafana Faro and sends telemetry to H.I.A.'s configured Grafana collector.</p>
+      <p>Cookie settings can be reopened from the site footer. Choosing “Essential only” prevents this site's analytics SDK from loading. Third-party services you choose to use, such as Stripe, PayPal, Google Fonts, or YouTube, may process information under their own policies.</p>
+    </section>
+
+    <section>
+      <h2>Questions</h2>
+      <p>For questions about this website's data handling, contact Hope International Association at <a href="mailto:hopeinternationalassociation@gmail.com">hopeinternationalassociation@gmail.com</a>.</p>
+    </section>
+  </main>
+  <footer>Hope International Association · Switzerland · <a href="index.html">Return to the website</a></footer>
+</body>
+</html>

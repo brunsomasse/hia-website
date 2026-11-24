@@ -2,7 +2,15 @@
   "name": "hia-website-functions",
   "version": "1.0.0",
   "description": "Netlify serverless functions for HIA website",
+  "scripts": {
+    "test": "playwright test"
+  },
   "dependencies": {
+    "@grafana/faro-web-sdk": "^2.14.0",
+    "@grafana/faro-web-tracing": "^2.14.0",
     "stripe": "^14.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
   }
 }
