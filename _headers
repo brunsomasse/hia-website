@@ -6,7 +6,6 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://formspree.io; script-src 'self' https://js.stripe.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://*.stripe.com; connect-src 'self' https://api.stripe.com https://r.stripe.com https://m.stripe.network https://faro-collector-prod-us-east-6.grafana.net https://formspree.io; frame-src https://www.youtube-nocookie.com https://js.stripe.com https://hooks.stripe.com https://*.stripe.com; upgrade-insecure-requests
 
 # Images — cache for 1 day only (not 1 year) so updates propagate quickly
 /images/*

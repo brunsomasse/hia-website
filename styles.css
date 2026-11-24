@@ -549,7 +549,6 @@
   }
   .amount-row button.active, .amount-row button:hover{border-color:var(--royal-light);color:var(--cream);}
   .modal-submit{
-    display:block;text-align:center;text-decoration:none;box-sizing:border-box;
     margin-top:22px;width:100%;background:linear-gradient(135deg,var(--gold-light),var(--gold));
     border:none;color:#1a1305;padding:13px 0;font-weight:600;letter-spacing:.12em;
     text-transform:uppercase;font-size:13px;border-radius:2px;cursor:pointer;

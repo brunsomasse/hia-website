@@ -1,5 +1,3 @@
-  document.documentElement.classList.add('js');
-
   function copyBank(){
     const txt = `Beneficiary: Hope International Association (Geneva-based Non-Profit Organization)
 Bank: PostFinance
@@ -320,21 +318,6 @@ Country: Switzerland`;
     document.getElementById('cookieBanner').style.display='block';
     document.querySelector('.cookie-accept').focus();
   }
-
-  document.addEventListener('click', event => {
-    const control = event.target.closest('[data-action]');
-    if(!control) return;
-    switch(control.dataset.action){
-      case 'accept-cookies': acceptCookies(); break;
-      case 'decline-cookies': declineCookies(); break;
-      case 'open-modal': openModal(control.dataset.method); break;
-      case 'load-video': loadHiaVideo(control); break;
-      case 'cookie-settings': showCookieSettings(); break;
-      case 'close-modal': closeModal(); break;
-      case 'stripe-payment': handleStripePayment(); break;
-      case 'copy-bank': copyBank(); break;
-    }
-  });
   let cookieChoice = null;
   try { cookieChoice = localStorage.getItem('hia_cookies'); } catch(e) {}
   if(cookieChoice === 'accepted') loadAnalytics();

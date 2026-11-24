@@ -63,6 +63,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hope International Association — H.I.A</title>
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -88,8 +89,8 @@
     <p><span data-i18n="cookie-copy">We use essential storage to remember your choices. Optional audience analytics load only if you allow them.</span> <a href="privacy.html#cookies" style="color:var(--gold-light);" data-i18n="cookie-details">Cookie details</a>
     </p>
     <div class="cookie-btns">
-      <button class="cookie-accept" data-action="accept-cookies" data-i18n="cookie-allow">Allow analytics</button>
-      <button class="cookie-decline" data-action="decline-cookies" data-i18n="cookie-essential">Essential only</button>
+      <button class="cookie-accept" onclick="acceptCookies()" data-i18n="cookie-allow">Allow analytics</button>
+      <button class="cookie-decline" onclick="declineCookies()" data-i18n="cookie-essential">Essential only</button>
     </div>
   </div>
 </aside>
@@ -125,7 +126,7 @@
         <li><a href="#contact-form" data-i18n="nav-contact">Contact</a></li>
       </ul>
     </nav>
-    <button class="donate-btn" data-i18n="nav-donate" data-action="open-modal">Donate Now</button>
+    <button class="donate-btn" data-i18n="nav-donate" onclick="openModal()">Donate Now</button>
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">☰</button>
   </div>
 </header>
@@ -137,7 +138,7 @@
     <li><a href="#programs" data-i18n="nav-programs">Programs</a></li>
     <li><a href="#approach" data-i18n="nav-stories">How we work</a></li>
     <li><a href="#contact-form" data-i18n="nav-contact">Contact</a></li>
-    <li><button class="donate-btn" style="width:100%" data-action="open-modal">Donate Now</button></li>
+    <li><button class="donate-btn" style="width:100%" onclick="openModal()">Donate Now</button></li>
   </ul>
 </div>
 
@@ -151,7 +152,7 @@
     <p class="tagline" data-i18n="hero-tagline">Practical help. Long-term care.</p>
     <p class="lede" data-i18n="hero-lede">Hope International Association is a Swiss nonprofit supporting widows and orphaned children through education, healthcare, emergency relief, and livelihood programs.</p>
     <div class="hero-ctas">
-    <button class="donate-btn" data-i18n="nav-donate" data-action="open-modal">Donate Now</button>
+      <button class="donate-btn" data-i18n="nav-donate" onclick="openModal()">Donate Now</button>
       <a href="#mission" class="btn-outline" data-i18n="hero-btn-mission">How we work</a>
     </div>
   </div>
@@ -177,7 +178,7 @@
         referrerpolicy="strict-origin-when-cross-origin"
         style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;">
       </iframe>
-      <button type="button" class="video-load" data-action="load-video"><span data-i18n="video-play">Load video</span></button>
+      <button type="button" class="video-load" onclick="loadHiaVideo(this)"><span data-i18n="video-play">Load video</span></button>
     </div>
   </div>
 </section>
@@ -308,17 +309,17 @@
     <p class="section-lede reveal" data-i18n="donate-lede">Every gift — large or small — helps support emergency relief, education, healthcare, and livelihood training for widows and orphans.</p>
     <div class="donate-methods reveal">
       
-      <button type="button" class="method-card" data-action="open-modal" data-method="paypal">
+      <button type="button" class="method-card" onclick="openModal('paypal')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 17l1.5-11h6c2.5 0 4 1.5 3.6 4-.4 2.7-2.5 4-5 4H9.5L9 17z"/></svg>
         <h5 data-i18n="method-paypal-title">PayPal</h5>
         <p data-i18n="method-paypal-p">Fast &amp; secure</p>
       </button>
-      <button type="button" class="method-card" data-action="open-modal" data-method="bank">
+      <button type="button" class="method-card" onclick="openModal('bank')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M19 10v9M9 10v9M15 10v9"/><path d="M3 21h18"/></svg>
         <h5 data-i18n="method-bank-title">Bank Transfer</h5>
         <p data-i18n="method-bank-p">Direct &amp; traceable</p>
       </button>
-      <button type="button" class="method-card" data-action="open-modal" data-method="mobile">
+      <button type="button" class="method-card" onclick="openModal('mobile')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
         <h5 data-i18n="method-mobile-title">Other methods</h5>
         <p data-i18n="method-mobile-p">PayPal or bank transfer</p>
@@ -335,7 +336,7 @@
   <div class="wrap reveal">
     <h2 data-i18n="cta-title">You can be <em>someone's hope</em> today.</h2>
     <div class="hero-ctas">
-      <button class="donate-btn" data-i18n="nav-donate" data-action="open-modal">Donate Now</button>
+      <button class="donate-btn" data-i18n="nav-donate" onclick="openModal()">Donate Now</button>
       <a href="#contact-form" class="btn-outline" data-i18n="cta-btn-involved">Get Involved</a>
     </div>
   </div>
@@ -451,14 +452,14 @@
   </div>
   <div class="wrap footer-bottom">
     <span>© 2026 Hope International Association (H.I.A) — Via al Gagiuracs 12, CH-6528 Camorino · Reg. 482.5.021.9302</span>
-    <span><a href="privacy.html" data-i18n="privacy-link">Privacy &amp; cookie details</a><button class="cookie-settings" type="button" data-action="cookie-settings" data-i18n="cookie-settings">Cookie settings</button></span>
+    <span><a href="privacy.html" data-i18n="privacy-link">Privacy &amp; cookie details</a><button class="cookie-settings" type="button" onclick="showCookieSettings()" data-i18n="cookie-settings">Cookie settings</button></span>
   </div>
 </footer>
 
 <!-- ============ DONATE MODAL ============ -->
 <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
-    <button class="modal-close" data-action="close-modal" aria-label="Close donation dialog">✕</button>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close donation dialog">✕</button>
     <h3 id="modalTitle" data-i18n="modal-title">Make a Donation</h3>
     <p data-i18n="modal-p">Choose a method below to support widows and orphans through H.I.A.</p>
     <div class="modal-tabs" role="tablist" aria-label="Donation method">
@@ -483,14 +484,14 @@
         <!-- Stripe Card Element mounts here -->
       </div>
       <div id="stripe-errors" style="color:#e55;font-size:12px;margin-top:8px;"></div>
-      <button class="modal-submit" id="stripePayBtn" data-action="stripe-payment" data-i18n="card-pay" style="margin-top:18px;">
+      <button class="modal-submit" id="stripePayBtn" onclick="handleStripePayment()" data-i18n="card-pay" style="margin-top:18px;">
         Pay with Card
       </button>
     </div>
 
     <div class="modal-panel" id="panel-paypal" role="tabpanel" aria-labelledby="tab-paypal" data-panel="paypal">
       <p><span data-i18n="modal-paypal-p">Donate securely via PayPal to</span> <strong style="color:var(--gold-light)">judmaria9@gmail.com</strong></p>
-      <a class="modal-submit" href="https://www.paypal.com/paypalme/judmaria9" target="_blank" rel="noopener noreferrer" data-i18n="modal-paypal-btn">Donate with PayPal</a>
+      <button class="modal-submit" onclick="window.open('https://www.paypal.com/paypalme/judmaria9','_blank')" data-i18n="modal-paypal-btn">Donate with PayPal</button>
     </div>
 
     <div class="modal-panel" id="panel-bank" role="tabpanel" aria-labelledby="tab-bank" data-panel="bank">
@@ -503,7 +504,7 @@
 <tr><td>Currency</td><td>CHF (Swiss Franc)</td></tr>
 <tr><td>Country</td><td>Switzerland</td></tr>
       </table>
-      <button class="modal-submit" style="margin-top:22px;" data-action="copy-bank" data-i18n="modal-bank-btn">Copy Bank Details</button>
+      <button class="modal-submit" style="margin-top:22px;" onclick="copyBank()" data-i18n="modal-bank-btn">Copy Bank Details</button>
       <p id="bank-copy-feedback" role="status" aria-live="polite" style="margin-top:8px;"></p>
     </div>
 
