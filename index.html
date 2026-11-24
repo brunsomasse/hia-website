@@ -28,7 +28,6 @@
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://js.stripe.com">
   <link rel="dns-prefetch" href="https://formspree.io">
 
   <!-- Favicon -->
@@ -58,678 +57,21 @@
     },
     "telephone": "+41774519514",
     "email": "hopeinternationalassociation@gmail.com",
-    "sameAs": [],
-    "nonprofitStatus": "Nonprofit501c3",
-    "taxID": "482.5.021.9302"
+    "sameAs": []
   }
   </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hope International Association — H.I.A</title>
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --black:#060d1e;
-    --black-2:#0d1a30;
-    --gold:#cda646;
-    --gold-light:#f1d98a;
-    --gold-deep:#8a6a26;
-    --cream:#e0e8f8;
-    --cream-dim:#8aa0c8;
-    --line:rgba(65,105,225,0.3);
-    --royal:#2150c8;
-    --royal-light:#4a7af5;
-    --royal-deep:#0d2a7a;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--black);
-    color:var(--cream);
-    font-family:'Jost',sans-serif;
-    font-weight:300;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4,.serif{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:600;
-    letter-spacing:0.01em;
-  }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
-  ::selection{background:var(--gold);color:#000;}
-
-  /* focus visibility */
-  a:focus-visible, button:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;}
-
-
-
-  /* ---- WHATSAPP FLOATING BUTTON ---- */
-  .whatsapp-float{
-    position:fixed;bottom:28px;right:28px;z-index:100;
-    display:flex;align-items:center;justify-content:center;
-    width:56px;height:56px;border-radius:50%;
-    background:#25D366;color:#fff;
-    box-shadow:0 6px 24px rgba(37,211,102,.4);
-    text-decoration:none;
-    transition:transform .25s, box-shadow .25s;
-    overflow:hidden;
-    letter-spacing:.02em;
-  }
-  .whatsapp-float:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(37,211,102,.5);
-  }
-  .whatsapp-float svg{
-    width:22px;height:22px;flex-shrink:0;
-  }
-  @media(max-width:600px){
-    .whatsapp-float span{display:none;}
-    .whatsapp-float{padding:14px;border-radius:50%;}
-  }
-
-  /* ---- VIDEO SECTION ---- */
-  .video-section{
-    background:var(--black);
-    padding:104px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .video-wrap{
-    margin-top:48px;
-    border-radius:4px;
-    overflow:hidden;
-    border:1px solid var(--line);
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
-    position:relative;
-    background:#000;
-    padding-top:56.25%;
-  }
-  .hia-video{
-    width:100%;
-    display:block;
-    max-height:580px;
-    object-fit:contain;
-    background:#000;
-  }
-  /* Custom video controls color hint */
-  .hia-video::-webkit-media-controls-panel{
-    background:linear-gradient(transparent, rgba(7,6,5,.9));
-  }
-
-
-  /* ---- WHATSAPP FLOAT ---- */
-  .whatsapp-float{
-    position:fixed;bottom:28px;right:28px;z-index:100;
-    width:58px;height:58px;border-radius:50%;
-    background:#25D366;
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;
-    box-shadow:0 4px 20px rgba(37,211,102,.45);
-    transition:transform .3s, box-shadow .3s;
-  }
-  .whatsapp-float:hover{
-    transform:translateY(-4px) scale(1.05);
-    box-shadow:0 8px 28px rgba(37,211,102,.6);
-  }
-
-
-
-  /* ---- END WHATSAPP + VIDEO ---- */
-
-  /* ---- SKIP LINK ---- */
-  .skip-link{
-    position:absolute;left:-9999px;top:0;z-index:999;
-    background:var(--gold);color:#000;padding:8px 16px;font-size:13px;
-  }
-  .skip-link:focus{left:0;}
-
-  /* ---- COOKIE BANNER ---- */
-  .cookie-banner{
-    position:fixed;bottom:0;left:0;right:0;z-index:300;
-    background:rgba(13,11,9,0.97);border-top:1px solid var(--line);
-    padding:18px 24px;backdrop-filter:blur(10px);
-  }
-  .cookie-inner{
-    max-width:1180px;margin:0 auto;
-    display:flex;align-items:center;gap:24px;flex-wrap:wrap;
-  }
-  .cookie-inner p{flex:1;font-size:13px;color:var(--cream-dim);line-height:1.6;margin:0;}
-  .cookie-btns{display:flex;gap:10px;flex-shrink:0;}
-  .cookie-accept{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    color:#1a1305;border:none;padding:9px 20px;border-radius:2px;
-    font-size:12.5px;font-weight:600;cursor:pointer;letter-spacing:.04em;
-  }
-  .cookie-decline{
-    background:none;border:1px solid var(--line);color:var(--cream-dim);
-    padding:9px 20px;border-radius:2px;font-size:12.5px;cursor:pointer;
-  }
-  .cookie-decline:hover{border-color:var(--gold);color:var(--gold-light);}
-
-  /* ---- STAGGERED CARDS ---- */
-  .reveal-card{
-    opacity:0;transform:translateY(20px);
-    transition:opacity .6s ease var(--delay, 0s), transform .6s ease var(--delay, 0s);
-  }
-  .reveal-card.in{opacity:1;transform:translateY(0);}
-
-  /* ---- MOBILE TAP TARGETS ---- */
-  @media(max-width:768px){
-    nav.main-nav a, footer ul li a{min-height:44px;display:flex;align-items:center;}
-    .method-card{padding:28px 14px;}
-    .donate-btn{padding:13px 20px;}
-    .modal-box{padding:28px 20px;}
-    .cookie-inner{flex-direction:column;align-items:flex-start;}
-  }
-
-  /* ---- SMOOTH FOCUS RINGS ---- */
-  *:focus-visible{
-    outline:2px solid var(--gold-light);
-    outline-offset:3px;
-    border-radius:2px;
-  }
-
-  /* ---- SELECTION COLOR ---- */
-  ::selection{background:var(--gold);color:#000;}
-
-  /* ---- SCROLLBAR STYLING ---- */
-  ::-webkit-scrollbar{width:6px;}
-  ::-webkit-scrollbar-track{background:var(--black);}
-  ::-webkit-scrollbar-thumb{background:var(--royal);border-radius:3px;}
-  ::-webkit-scrollbar-thumb:hover{background:var(--royal-light);}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
-  }
-
-  /* ---------- TOPBAR ---------- */
-  .topbar{
-    background:var(--black-2);
-    border-bottom:1px solid var(--line);
-    font-size:12.5px;
-    letter-spacing:.12em;
-    color:var(--cream-dim);
-  }
-  .topbar .wrap{
-    display:flex;justify-content:space-between;align-items:center;
-    padding-top:8px;padding-bottom:8px;
-  }
-  .topbar .contact-bits{display:flex;gap:22px;flex-wrap:wrap;}
-  .topbar .contact-bits span{display:inline-flex;align-items:center;gap:6px;}
-  .topbar .lang button{
-    background:none;border:none;color:var(--cream-dim);font-family:'Jost';font-size:11.5px;
-    cursor:pointer;padding:2px 5px;letter-spacing:.04em;
-  }
-  .topbar .lang button.active{color:var(--gold-light);border-bottom:1px solid var(--gold-light);}
-  .placeholder-tag{
-    color:var(--royal-light);
-    font-style:italic;
-    border-bottom:1px dashed var(--royal-light);
-  }
-
-  /* ---------- HEADER / NAV ---------- */
-  header.site-header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(7,6,5,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-row{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 0;
-  }
-  .brand{display:flex;align-items:center;gap:12px;}
-  .brand img{height:46px;width:auto;filter:drop-shadow(0 0 10px rgba(33,80,200,.4));}
-  .brand .brand-text{font-family:'Cormorant Garamond';font-size:20px;letter-spacing:.12em;color:var(--cream);}
-  .brand .brand-text small{display:block;font-family:'Jost';font-size:9.5px;letter-spacing:.18em;color:var(--cream-dim);font-weight:300;}
-
-  nav.main-nav ul{list-style:none;display:flex;gap:30px;align-items:center;}
-  nav.main-nav a{
-    font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cream-dim);
-    position:relative;padding-bottom:4px;transition:color .25s;
-  }
-  nav.main-nav a:hover{color:var(--gold-light);}
-  nav.main-nav a::after{
-    content:'';position:absolute;left:0;bottom:0;width:0%;height:1px;background:var(--royal-light);
-    transition:width .3s;
-  }
-  nav.main-nav a:hover::after{width:100%;}
-
-  .donate-btn{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-deep));
-    color:#1a1305;
-    font-family:'Jost';font-weight:600;font-size:13px;letter-spacing:.05em;
-    text-transform:uppercase;
-    padding:11px 24px;border-radius:2px;border:none;cursor:pointer;
-    box-shadow:0 4px 18px rgba(33,80,200,.3);
-    transition:transform .25s, box-shadow .25s;
-  }
-  .donate-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(33,80,200,.45);}
-
-  .menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--gold-light);
-    width:42px;height:42px;border-radius:2px;font-size:18px;cursor:pointer;}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    min-height:92vh;
-    display:flex;align-items:center;justify-content:center;
-    text-align:center;
-    overflow:hidden;
-    background:
-      radial-gradient(ellipse at 50% 20%, rgba(33,80,200,0.18), transparent 60%),
-      var(--black);
-  }
-  .hero::before{
-    content:'';position:absolute;inset:0;
-    background-image:
-      repeating-linear-gradient(0deg, rgba(255,255,255,.015) 0 1px, transparent 1px 3px);
-    pointer-events:none;
-  }
-  .hero-glow{
-    position:absolute;width:560px;height:560px;border-radius:50%;
-    background:radial-gradient(circle, rgba(33,80,200,.28), transparent 70%);
-    top:8%;left:50%;transform:translateX(-50%);
-    filter:blur(10px);
-    animation:pulse 6s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:.6;transform:translateX(-50%) scale(1);}
-    50%{opacity:1;transform:translateX(-50%) scale(1.08);}
-  }
-  .hero-content{position:relative;z-index:2;max-width:760px;padding:0 24px;}
-  .hero-logo{
-    height:150px;width:auto;margin:0 auto 18px;
-    filter:drop-shadow(0 0 26px rgba(33,80,200,.5));
-    animation:float 5s ease-in-out infinite;
-  }
-  @keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-  }
-  .hero h1{
-    font-size:clamp(40px,6vw,68px);
-    color:var(--cream);
-    line-height:1.05;
-    font-weight:600;
-  }
-  .hero h1 em{
-    font-style:italic;color:var(--gold-light);
-    background:linear-gradient(90deg,var(--gold-light),var(--gold));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .hero .tagline{
-    margin-top:14px;font-family:'Cormorant Garamond';font-style:italic;font-size:21px;
-    color:var(--cream-dim);
-  }
-  .hero p.lede{
-    margin:26px auto 0;max-width:540px;font-size:15.5px;line-height:1.85;color:var(--cream-dim);
-  }
-  .hero-ctas{margin-top:38px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-  .btn-outline{
-    border:1px solid var(--gold);color:var(--gold-light);
-    padding:12px 26px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
-    border-radius:2px;transition:all .25s;
-  }
-  .btn-outline:hover{background:rgba(205,166,70,.1);}
-  .scroll-cue{
-    position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
-    width:1px;height:46px;background:linear-gradient(var(--gold), transparent);
-    z-index:2;
-  }
-  .scroll-cue::after{
-    content:'';position:absolute;left:-3px;top:0;width:7px;height:7px;border-radius:50%;
-    background:var(--gold-light);
-    animation:dropdown 2.2s ease-in-out infinite;
-  }
-  @keyframes dropdown{0%{top:0;opacity:1;}90%{opacity:0;}100%{top:42px;opacity:0;}}
-
-  /* ---------- SECTION GENERIC ---------- */
-  section{padding:104px 0;}
-  .eyebrow{
-    font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--royal-light);
-    display:flex;align-items:center;gap:14px;margin-bottom:14px;
-  }
-  .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:120px;}
-  .section-title{font-size:clamp(28px,4vw,42px);color:var(--cream);max-width:640px;font-weight:600;}
-  .section-title em{font-style:italic;color:var(--gold-light);}
-  .section-lede{margin-top:18px;max-width:640px;color:var(--cream-dim);font-size:15.5px;line-height:1.85;}
-
-  /* ---------- MISSION / FOUNDER LETTER ---------- */
-  .mission{
-    background:var(--black-2);
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    position:relative;
-  }
-  .mission-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start;}
-  .mission-text p{margin-bottom:18px;font-size:15.5px;line-height:1.9;color:var(--cream-dim);}
-  .mission-text strong{color:var(--gold-light);font-weight:500;}
-  .signature{
-    margin-top:30px;font-family:'Cormorant Garamond';font-style:italic;font-size:18px;font-weight:600;color:var(--gold-light);
-  }
-  .signature small{display:block;font-family:'Jost';font-style:normal;font-size:11.5px;color:var(--cream-dim);letter-spacing:.12em;margin-top:4px;}
-  .pillar-card{
-    border:1px solid var(--line);padding:26px 24px;margin-bottom:18px;border-radius:2px;
-    background:linear-gradient(180deg, rgba(205,166,70,.04), transparent);
-    transition:border-color .25s, transform .25s;
-  }
-  .pillar-card:hover{border-color:var(--royal-light);transform:translateX(4px);}
-  .pillar-card .num{font-family:'Cormorant Garamond';font-size:13px;color:var(--gold-deep);letter-spacing:.1em;}
-  .pillar-card h4{font-size:21px;margin:6px 0 8px;color:var(--cream);}
-  .pillar-card p{font-size:13.8px;color:var(--cream-dim);line-height:1.7;}
-
-  /* ---------- IMAGE GALLERY (placeholders) ---------- */
-  .gallery-section{background:var(--black);}
-  .gallery-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px;margin-top:48px;
-  }
-  .gallery-grid .ph{grid-column:span 2;grid-row:span 2;}
-  .gallery-grid .ph.tall{grid-row:span 2;}
-  .ph-tile{
-    position:relative;
-    border:1px dashed var(--gold-deep);
-    background:repeating-linear-gradient(135deg, rgba(205,166,70,.05) 0 10px, rgba(205,166,70,.02) 10px 20px);
-    display:flex;align-items:center;justify-content:center;
-    overflow:hidden;border-radius:2px;
-  }
-  .ph-tile .ph-label{
-    text-align:center;color:var(--gold-deep);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
-  }
-  .ph-tile .ph-label svg{display:block;margin:0 auto 8px;opacity:.6;}
-  .gallery-note{
-    margin-top:18px;font-size:12.5px;color:var(--cream-dim);font-style:italic;
-  }
-
-  
-  /* ---- NEW GALLERY LAYOUT ---- */
-  .gallery-grid-new { margin-top: 48px; }
-  .gallery-full {
-    width: 100%;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 14px;
-    border: 1px solid var(--line);
-  }
-  .gallery-full img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .gallery-three {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-  .gallery-tile {
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    aspect-ratio: 4/3;
-  }
-  .gallery-tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .4s ease;
-  }
-  .gallery-tile:hover img { transform: scale(1.04); }
-  @media(max-width:700px){
-    .gallery-three { grid-template-columns: 1fr; }
-  }
-  /* ---- END NEW GALLERY ---- */
-
-
-  /* ---------- CONTACT FORM SECTION ---------- */
-  .contact-section{
-    background:var(--black-2);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:104px 0;
-  }
-  .contact-grid{
-    display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;
-  }
-  .contact-details{
-    list-style:none;margin-top:32px;display:flex;flex-direction:column;gap:16px;
-  }
-  .contact-details li{
-    display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--cream-dim);line-height:1.6;
-  }
-  .contact-details svg{flex-shrink:0;margin-top:3px;color:var(--royal-light);}
-  .contact-form-wrap{
-    background:var(--black);border:1px solid var(--line);padding:38px 34px;border-radius:2px;
-  }
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
-  .form-group label{
-    font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-light);
-  }
-  .form-group input,
-  .form-group select,
-  .form-group textarea{
-    background:var(--black-2);border:1px solid var(--line);color:var(--cream);
-    padding:11px 14px;font-family:'Jost',sans-serif;font-size:14px;border-radius:2px;
-    outline:none;transition:border-color .2s;width:100%;
-  }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus{border-color:var(--royal-light);}
-  .form-group select option{background:var(--black-2);}
-  .form-group textarea{resize:vertical;min-height:120px;}
-  .form-submit{
-    width:100%;background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-deep));
-    border:none;color:#1a1305;padding:13px 0;font-weight:600;letter-spacing:.04em;
-    text-transform:uppercase;font-size:13px;border-radius:2px;cursor:pointer;
-    transition:transform .2s, box-shadow .2s;
-  }
-  .form-submit:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(205,166,70,.3);}
-  .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-  .form-success{
-    margin-top:14px;padding:12px 16px;background:rgba(95,168,122,.12);
-    border:1px solid rgba(95,168,122,.3);border-radius:2px;
-    font-size:13px;color:#8fcca0;
-  }
-  .form-error{
-    margin-top:14px;padding:12px 16px;background:rgba(220,80,80,.1);
-    border:1px solid rgba(220,80,80,.25);border-radius:2px;
-    font-size:13px;color:#e08080;
-  }
-  @media(max-width:768px){
-    .contact-grid{grid-template-columns:1fr;gap:40px;}
-    .form-row{grid-template-columns:1fr;}
-  }
-  /* ---------- END CONTACT FORM ---------- */
-
-  /* ---------- PROGRAMS ---------- */
-  .programs{background:var(--black-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .programs-grid{
-    margin-top:54px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    background:var(--line);border:1px solid var(--line);
-  }
-  .program-card{
-    background:var(--black-2);padding:38px 30px;transition:background .3s;
-  }
-  .program-card:hover{background:#120e08;}
-  .program-icon{
-    width:42px;height:42px;margin-bottom:20px;color:var(--royal-light);
-  }
-  .program-card h4{font-size:21px;color:var(--cream);margin-bottom:10px;}
-  .program-card p{font-size:13.8px;color:var(--cream-dim);line-height:1.7;}
-
-  /* ---------- IMPACT STATS ---------- */
-  .stats{background:var(--black);border-top:1px solid rgba(33,80,200,0.2);border-bottom:1px solid rgba(33,80,200,0.2);}
-  .stats-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px;text-align:center;
-  }
-  .stat{padding:30px 10px;border-left:1px solid var(--line);}
-  .stat:first-child{border-left:none;}
-  .stat .stat-num{
-    font-family:'Cormorant Garamond';font-size:50px;color:var(--gold-light);font-weight:600;
-    line-height:1;
-  }
-  .stat .stat-label{margin-top:10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim);}
-
-  /* ---------- STORY / QUOTE ---------- */
-  .story{
-    background:var(--black-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    position:relative;
-  }
-  .story .wrap{max-width:820px;text-align:center;}
-  .story blockquote{
-    font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-size:clamp(22px,3.2vw,32px);
-    line-height:1.5;color:var(--cream);
-  }
-  .story blockquote::before{content:'“';color:var(--gold);}
-  .story blockquote::after{content:'”';color:var(--gold);}
-  .story cite{display:block;margin-top:24px;font-style:normal;font-size:13px;letter-spacing:.05em;color:var(--gold-deep);}
-
-  /* ---------- DONATE ---------- */
-  .donate-section{background:var(--black);}
-  .donate-methods{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;
-  }
-  .method-card{
-    border:1px solid var(--line);padding:34px 18px;text-align:center;border-radius:2px;
-    cursor:pointer;background:linear-gradient(180deg, rgba(205,166,70,.04), transparent);
-    transition:border-color .25s, transform .25s;
-  }
-  .method-card:hover{border-color:var(--royal-light);transform:translateY(-4px);}
-  .method-card .icon{width:34px;height:34px;margin:0 auto 16px;color:var(--gold-light);}
-  .method-card h5{font-size:14px;letter-spacing:.12em;color:var(--cream);text-transform:uppercase;}
-  .method-card p{margin-top:6px;font-size:11.5px;color:var(--cream-dim);}
-
-  .donate-legal{
-    margin-top:40px;padding-top:30px;border-top:1px solid var(--line);
-    font-size:12px;color:var(--cream-dim);line-height:1.8;max-width:760px;
-  }
-
-  /* ---------- PARTNERS ---------- */
-  .partners{background:var(--black-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .partners-row{
-    margin-top:46px;display:flex;gap:60px;flex-wrap:wrap;align-items:center;justify-content:center;
-  }
-  .partner-ph{
-    width:150px;height:70px;border:1px dashed var(--gold-deep);border-radius:2px;
-    display:flex;align-items:center;justify-content:center;
-    color:var(--gold-deep);font-size:11px;letter-spacing:.05em;text-align:center;
-  }
-
-  /* ---------- CTA BAND ---------- */
-  .cta-band{
-    background:linear-gradient(135deg, #16110a, #0d0b09);
-    text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  }
-  .cta-band h2{font-size:clamp(26px,4vw,40px);color:var(--cream);max-width:680px;margin:0 auto;}
-  .cta-band h2 em{font-style:italic;color:var(--gold-light);}
-  .cta-band .hero-ctas{margin-top:32px;}
-
-  /* ---------- CONTACT / FOOTER ---------- */
-  footer{background:var(--black-2);padding-top:80px;border-top:1px solid var(--line);}
-  .footer-grid{
-    display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px;padding-bottom:60px;
-  }
-  .footer-brand .brand{margin-bottom:18px;}
-  .footer-brand p{font-size:13.5px;color:var(--cream-dim);line-height:1.8;max-width:320px;}
-  footer h5{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:18px;}
-  footer ul{list-style:none;}
-  footer ul li{margin-bottom:11px;font-size:13.5px;color:var(--cream-dim);}
-  footer ul li a:hover{color:var(--gold-light);}
-  .contact-line{display:flex;gap:10px;align-items:flex-start;}
-  .contact-line svg{flex-shrink:0;margin-top:2px;color:var(--royal-light);}
-  .social-row{display:flex;gap:14px;margin-top:18px;}
-  .social-row a{
-    width:36px;height:36px;border:1px solid var(--line);border-radius:50%;
-    display:flex;align-items:center;justify-content:center;color:var(--gold-light);
-    transition:border-color .25s, background .25s;
-  }
-  .social-row a:hover{border-color:var(--royal-light);background:rgba(33,80,200,.12);}
-  .footer-bottom{
-    border-top:1px solid var(--line);padding:22px 0;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-    font-size:11.5px;color:var(--cream-dim);
-  }
-  .footer-bottom a{color:var(--cream-dim);}
-  .footer-bottom a:hover{color:var(--gold-light);}
-
-  /* ---------- MODAL ---------- */
-  .modal-overlay{
-    position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);
-    display:none;align-items:center;justify-content:center;z-index:200;padding:20px;
-  }
-  .modal-overlay.open{display:flex;}
-  .modal-box{
-    background:var(--black-2);border:1px solid var(--line);max-width:440px;width:100%;
-    padding:38px 34px;border-radius:3px;position:relative;
-    box-shadow:0 20px 60px rgba(0,0,0,.6);
-  }
-  .modal-close{
-    position:absolute;top:16px;right:18px;background:none;border:none;color:var(--cream-dim);
-    font-size:20px;cursor:pointer;line-height:1;
-  }
-  .modal-close:hover{color:var(--gold-light);}
-  .modal-box h3{font-size:24px;color:var(--gold-light);margin-bottom:14px;}
-  .modal-box p{font-size:13.8px;color:var(--cream-dim);line-height:1.75;margin-bottom:18px;}
-  .modal-tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap;}
-  .modal-tabs button{
-    background:none;border:1px solid var(--line);color:var(--cream-dim);
-    font-size:11.5px;padding:7px 12px;border-radius:20px;cursor:pointer;letter-spacing:.03em;
-    transition:all .2s;
-  }
-  .modal-tabs button.active{border-color:var(--royal-light);color:var(--cream);background:rgba(33,80,200,.15);}
-  .modal-panel{display:none;}
-  .modal-panel.active{display:block;}
-  .bank-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
-  .bank-table td{padding:8px 0;border-bottom:1px solid var(--line);color:var(--cream-dim);}
-  .bank-table td:first-child{color:var(--royal-light);width:40%;}
-  .amount-row{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;}
-  .amount-row button{
-    flex:1;min-width:64px;background:none;border:1px solid var(--line);color:var(--cream);
-    padding:10px 0;border-radius:2px;cursor:pointer;font-size:13.5px;transition:all .2s;
-  }
-  .amount-row button.active, .amount-row button:hover{border-color:var(--royal-light);color:var(--cream);}
-  .modal-submit{
-    margin-top:22px;width:100%;background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    border:none;color:#1a1305;padding:13px 0;font-weight:600;letter-spacing:.12em;
-    text-transform:uppercase;font-size:13px;border-radius:2px;cursor:pointer;
-  }
-
-  /* fade-in on scroll */
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-
-  /* mobile nav drawer */
-  .mobile-drawer{
-    position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;
-    background:var(--black-2);border-left:1px solid var(--line);z-index:150;
-    padding:90px 30px 30px;transition:right .35s ease;
-  }
-  .mobile-drawer.open{right:0;}
-  .mobile-drawer ul{list-style:none;display:flex;flex-direction:column;gap:24px;}
-  .mobile-drawer a{font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim);}
-  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:140;display:none;}
-  .scrim.open{display:block;}
-
-  @media(max-width:980px){
-    nav.main-nav, .donate-btn{display:none;}
-    .menu-toggle{display:block;}
-    .mission-grid{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:repeat(2,1fr);}
-    .programs-grid{grid-template-columns:1fr;}
-    .stats-grid{grid-template-columns:repeat(2,1fr);}
-    .stat{border-left:none;border-top:1px solid var(--line);}
-    .donate-methods{grid-template-columns:repeat(2,1fr);}
-    .footer-grid{grid-template-columns:1fr;gap:36px;}
-    .topbar .contact-bits{display:none;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- ============ TOPBAR ============ -->
-<a href="#mission" class="skip-link">Skip to main content</a>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 
 <!-- ============ WHATSAPP FLOAT ============ -->
@@ -742,17 +84,16 @@
 </a>
 
 <!-- ============ GDPR COOKIE BANNER ============ -->
-<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" style="display:none;">
+<aside id="cookieBanner" class="cookie-banner" role="region" aria-label="Cookie preferences" style="display:none;">
   <div class="cookie-inner">
-    <p>We use cookies to improve your experience on this site, in line with Swiss and EU privacy rules.
-      <a href="#" style="color:var(--gold-light);">Learn more</a>
+    <p><span data-i18n="cookie-copy">We use essential storage to remember your choices. Optional audience analytics load only if you allow them.</span> <a href="privacy.html#cookies" style="color:var(--gold-light);" data-i18n="cookie-details">Cookie details</a>
     </p>
     <div class="cookie-btns">
-      <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
-      <button class="cookie-decline" onclick="declineCookies()">Essential Only</button>
+      <button class="cookie-accept" onclick="acceptCookies()" data-i18n="cookie-allow">Allow analytics</button>
+      <button class="cookie-decline" onclick="declineCookies()" data-i18n="cookie-essential">Essential only</button>
     </div>
   </div>
-</div>
+</aside>
 
 <div class="topbar">
   <div class="wrap">
@@ -762,10 +103,10 @@
       <span>✉️ hopeinternationalassociation@gmail.com</span>
     </div>
     <div class="lang">
-      <button class="active" data-lang="en">EN</button>
-      <button data-lang="fr">FR</button>
-      <button data-lang="it">IT</button>
-      <button data-lang="es">ES</button>
+      <button class="active" data-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button data-lang="fr" aria-pressed="false" lang="fr">FR</button>
+      <button data-lang="it" aria-pressed="false" lang="it">IT</button>
+      <button data-lang="es" aria-pressed="false" lang="es">ES</button>
     </div>
   </div>
 </div>
@@ -774,15 +115,15 @@
 <header class="site-header" role="banner">
   <div class="wrap nav-row">
     <a href="#top" class="brand">
-      <img src="" alt="H.I.A logo" class="hia-logo">
+      <img alt="H.I.A logo" class="hia-logo" width="73" height="84">
       <span class="brand-text">H.I.A<small>Hope International Association</small></span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
         <li><a href="#mission" data-i18n="nav-about">About</a></li>
         <li><a href="#programs" data-i18n="nav-programs">Programs</a></li>
-        <li><a href="#stories" data-i18n="nav-stories">Stories</a></li>
-        <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+        <li><a href="#approach" data-i18n="nav-stories">How we work</a></li>
+        <li><a href="#contact-form" data-i18n="nav-contact">Contact</a></li>
       </ul>
     </nav>
     <button class="donate-btn" data-i18n="nav-donate" onclick="openModal()">Donate Now</button>
@@ -791,28 +132,28 @@
 </header>
 
 <div class="scrim" id="scrim"></div>
-<div class="mobile-drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+<div class="mobile-drawer" id="drawer" role="dialog" aria-label="Navigation menu" aria-modal="true" aria-hidden="true" tabindex="-1">
   <ul>
     <li><a href="#mission" data-i18n="nav-about">About</a></li>
     <li><a href="#programs" data-i18n="nav-programs">Programs</a></li>
-    <li><a href="#stories" data-i18n="nav-stories">Stories</a></li>
-    <li><a href="#partners" data-i18n="nav-partners">Partners</a></li>
-    <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+    <li><a href="#approach" data-i18n="nav-stories">How we work</a></li>
+    <li><a href="#contact-form" data-i18n="nav-contact">Contact</a></li>
     <li><button class="donate-btn" style="width:100%" onclick="openModal()">Donate Now</button></li>
   </ul>
 </div>
 
 <!-- ============ HERO ============ -->
+<main id="main">
 <section class="hero" id="top">
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <img src="" alt="H.I.A — Hope International Association" class="hia-logo hero-logo">
-    <h1 data-i18n="hero-h1">Hope <em>is</em> life.</h1>
-    <p class="tagline" data-i18n="hero-tagline">Help me help them.</p>
-    <p class="lede" data-i18n="hero-lede">Hope International Association is a Geneva-based nonprofit standing beside widows and orphans around the world — with education, healthcare, livelihood support, and a community that does not look away.</p>
+    <img alt="H.I.A — Hope International Association" class="hia-logo hero-logo" width="73" height="84">
+    <h1 data-i18n="hero-h1">Support for widows and children rebuilding after loss.</h1>
+    <p class="tagline" data-i18n="hero-tagline">Practical help. Long-term care.</p>
+    <p class="lede" data-i18n="hero-lede">Hope International Association is a Swiss nonprofit supporting widows and orphaned children through education, healthcare, emergency relief, and livelihood programs.</p>
     <div class="hero-ctas">
       <button class="donate-btn" data-i18n="nav-donate" onclick="openModal()">Donate Now</button>
-      <a href="#mission" class="btn-outline" data-i18n="hero-btn-mission">Our Mission</a>
+      <a href="#mission" class="btn-outline" data-i18n="hero-btn-mission">How we work</a>
     </div>
   </div>
   <div class="scroll-cue"></div>
@@ -823,18 +164,21 @@
 <section class="video-section">
   <div class="wrap">
     <div class="eyebrow reveal" style="justify-content:center;" data-i18n="video-eyebrow">Our Story</div>
-    <h2 class="section-title reveal" style="text-align:center;margin:0 auto;">See the <em>hope</em> we build.</h2>
-    <p class="section-lede reveal" style="text-align:center;margin:14px auto 0;">A Geneva-based organization standing beside widows and orphans — watch our story.</p>
+    <h2 class="section-title reveal" style="text-align:center;margin:0 auto;" data-i18n="video-title">See the <em>hope</em> we build.</h2>
+    <p class="section-lede reveal" style="text-align:center;margin:14px auto 0;" data-i18n="video-lede">Learn about Hope International Association and the people we aim to support.</p>
     <div class="video-wrap reveal">
       <iframe
-        src="https://www.youtube.com/embed/DEWXwHGFkAg?rel=0&modestbranding=1&color=white"
+        src="about:blank"
+        data-src="https://www.youtube-nocookie.com/embed/DEWXwHGFkAg?rel=0&modestbranding=1&color=white"
         title="Hope International Association — Who We Are"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
         loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
         style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;">
       </iframe>
+      <button type="button" class="video-load" onclick="loadHiaVideo(this)"><span data-i18n="video-play">Load video</span></button>
     </div>
   </div>
 </section>
@@ -848,7 +192,7 @@
       <h2 class="section-title">Loss should never be<br><em>a life sentence.</em></h2>
       <p style="margin-top:24px;" data-i18n="mission-p1">When a husband or father is lost, a family's entire foundation can collapse overnight — income, housing, education, and security all at risk at once. Hope International Association exists to close that gap.</p>
       <p data-i18n="mission-p2">We are not a relief organization that disappears once the crisis fades from the headlines. We are a <strong>long-term partner</strong> in rebuilding — through scholarships, microfinance, healthcare access, and vocational training that help widows regain independence and give orphaned children a real path forward.</p>
-      <p data-i18n="mission-p3">Every franc raised goes toward a person, a family, a future — never toward abstraction.</p>
+      <p data-i18n="mission-p3">Every franc raised supports our work with families and communities.</p>
       <div class="signature" data-i18n="mission-sig">Hope International Association<small data-i18n="mission-sig-small">Founder &amp; President — H.I.A · Geneva</small></div>
     </div>
     <div class="reveal">
@@ -865,7 +209,7 @@
       <div class="pillar-card">
         <div class="num" data-i18n="pillar3-num">03 — Long-Term Care</div>
         <h4 data-i18n="pillar3-title">Hope that continues</h4>
-        <p data-i18n="pillar3-p">Ongoing health services, mentorship, and community partnerships — support that doesn't end after one gift.</p>
+        <p data-i18n="pillar3-p">Ongoing health services, mentorship, and community support — care that continues beyond a single gift.</p>
       </div>
     </div>
   </div>
@@ -880,18 +224,18 @@
     <div class="gallery-grid-new reveal">
       <!-- Full-width HIA donate image - shown entirely -->
       <div class="gallery-full">
-        <img id="hia-donate-img" loading="lazy" src="" alt="Donate — Hope International Association">
+        <img id="hia-donate-img" loading="lazy" alt="Hope International Association community and education programs" width="1200" height="1200">
       </div>
       <!-- 3-column photo grid -->
       <div class="gallery-three">
         <div class="gallery-tile">
-          <img src="" alt="H.I.A community — families and volunteers" class="hia-gallery-img" loading="lazy">
+          <img alt="H.I.A community — families and volunteers" class="hia-gallery-img" loading="lazy" width="1200" height="675">
         </div>
         <div class="gallery-tile">
-          <img src="" alt="H.I.A education — children in class" class="hia-gallery-img" loading="lazy">
+          <img alt="H.I.A education — children in class" class="hia-gallery-img" loading="lazy" width="900" height="1350">
         </div>
         <div class="gallery-tile">
-          <img src="" alt="H.I.A care — mother and child" class="hia-gallery-img" loading="lazy">
+          <img alt="H.I.A care — mother and child" class="hia-gallery-img" loading="lazy" width="1400" height="600">
         </div>
       </div>
     </div>
@@ -944,34 +288,16 @@
 <section class="stats">
   <div class="wrap">
     <div class="eyebrow reveal" data-i18n="stats-eyebrow">Impact</div>
-    <h2 class="section-title reveal" data-i18n="stats-title">Numbers behind <em>every name.</em></h2>
-    <div class="stats-grid reveal">
-      <div class="stat">
-        <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label" data-i18n="stat1-label">Widows supported</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label" data-i18n="stat2-label">Children sponsored</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label" data-i18n="stat3-label">Countries reached</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-count="0">0</div>
-        <div class="stat-label" data-i18n="stat4-label">Active partnerships</div>
-      </div>
-    </div>
+    <h2 class="section-title reveal" data-i18n="stats-title">Support that can meet <em>changing needs.</em></h2>
+    <p class="section-lede reveal" data-i18n="stats-lede">H.I.A describes its work as a combination of immediate assistance and longer-term support. We’ll share verified impact figures here when reporting is available.</p>
   </div>
 </section>
 
 <!-- ============ STORY ============ -->
-<section class="story" id="stories">
+<section class="story" id="approach">
   <div class="wrap reveal">
-    <div class="eyebrow" style="justify-content:center;" data-i18n="story-eyebrow">A Story of Hope</div>
-    <blockquote data-i18n="story-quote">It's not how much we give, but how much love we put into giving.</blockquote>
-    <cite data-i18n="story-cite">Mother Teresa</cite>
+    <div class="eyebrow" style="justify-content:center;" data-i18n="story-eyebrow">A long-term approach</div>
+    <p class="approach-statement" data-i18n="story-quote">From urgent needs to education, health, and livelihood support, our programs are intended to help families move toward greater stability.</p>
   </div>
 </section>
 
@@ -980,26 +306,26 @@
   <div class="wrap">
     <div class="eyebrow reveal" data-i18n="donate-eyebrow">Give</div>
     <h2 class="section-title reveal" data-i18n="donate-title">Select how you'd<br><em>like to give.</em></h2>
-    <p class="section-lede reveal" data-i18n="donate-lede">Every gift — large or small — goes directly toward emergency relief, education, healthcare, and livelihood training for widows and orphans.</p>
+    <p class="section-lede reveal" data-i18n="donate-lede">Every gift — large or small — helps support emergency relief, education, healthcare, and livelihood training for widows and orphans.</p>
     <div class="donate-methods reveal">
       
-      <div class="method-card" onclick="openModal('paypal')">
+      <button type="button" class="method-card" onclick="openModal('paypal')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 17l1.5-11h6c2.5 0 4 1.5 3.6 4-.4 2.7-2.5 4-5 4H9.5L9 17z"/></svg>
         <h5 data-i18n="method-paypal-title">PayPal</h5>
         <p data-i18n="method-paypal-p">Fast &amp; secure</p>
-      </div>
-      <div class="method-card" onclick="openModal('bank')">
+      </button>
+      <button type="button" class="method-card" onclick="openModal('bank')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M19 10v9M9 10v9M15 10v9"/><path d="M3 21h18"/></svg>
         <h5 data-i18n="method-bank-title">Bank Transfer</h5>
         <p data-i18n="method-bank-p">Direct &amp; traceable</p>
-      </div>
-      <div class="method-card" onclick="openModal('mobile')">
+      </button>
+      <button type="button" class="method-card" onclick="openModal('mobile')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
-        <h5 data-i18n="method-mobile-title">QR / Mobile</h5>
-        <p data-i18n="method-mobile-p">Scan &amp; give</p>
-      </div>
+        <h5 data-i18n="method-mobile-title">Other methods</h5>
+        <p data-i18n="method-mobile-p">PayPal or bank transfer</p>
+      </button>
     </div>
-    <div class="donate-legal reveal">
+    <div class="donate-legal reveal" data-i18n="donate-legal">
       Hope International Association (H.I.A) is a registered nonprofit organization based in Switzerland (Reg. No. 482.5.021.9302). Donations processed via PostFinance (IBAN: CH05 0900 0000 1679 9930 3) or PayPal (judmaria9@gmail.com). Contact us for a donation receipt.
     </div>
   </div>
@@ -1011,7 +337,7 @@
     <h2 data-i18n="cta-title">You can be <em>someone's hope</em> today.</h2>
     <div class="hero-ctas">
       <button class="donate-btn" data-i18n="nav-donate" onclick="openModal()">Donate Now</button>
-      <a href="#contact" class="btn-outline" data-i18n="cta-btn-involved">Get Involved</a>
+      <a href="#contact-form" class="btn-outline" data-i18n="cta-btn-involved">Get Involved</a>
     </div>
   </div>
 </section>
@@ -1023,9 +349,9 @@
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <div class="eyebrow">Get In Touch</div>
-        <h2 class="section-title">Send us a <em>message.</em></h2>
-        <p class="section-lede">Whether you want to donate, volunteer, partner with us, or simply learn more — we'd love to hear from you.</p>
+        <div class="eyebrow" data-i18n="contact-eyebrow">Get In Touch</div>
+        <h2 class="section-title" data-i18n="contact-title">Send us a <em>message.</em></h2>
+        <p class="section-lede" data-i18n="contact-lede">Whether you want to donate, volunteer, partner with us, or simply learn more — we'd love to hear from you.</p>
         <ul class="contact-details">
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1033,11 +359,11 @@
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.5a16 16 0 0 0 6 6l1.7-1.4a2 2 0 0 1 2.1-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.2 2.1z"/></svg>
-            +41 77 451 95 14
+            <a href="tel:+41774519514">+41 77 451 95 14</a>
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
-            hopeinternationalassociation@gmail.com
+            <a href="mailto:hopeinternationalassociation@gmail.com">hopeinternationalassociation@gmail.com</a>
           </li>
         </ul>
       </div>
@@ -1045,56 +371,56 @@
         <form id="contactForm" action="https://formspree.io/f/maqrqwql" method="POST">
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-name">Full Name</label>
-              <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+              <label for="cf-name" data-i18n="form-name">Full Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" data-i18n-placeholder="form-name-placeholder" autocomplete="name" required>
             </div>
             <div class="form-group">
-              <label for="cf-email">Email</label>
-              <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+              <label for="cf-email" data-i18n="form-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" data-i18n-placeholder="form-email-placeholder" autocomplete="email" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="cf-subject">Subject</label>
+            <label for="cf-subject" data-i18n="form-subject">Subject</label>
             <select id="cf-subject" name="subject">
-              <option value="General Inquiry">General Inquiry</option>
-              <option value="Donation Question">Donation Question</option>
-              <option value="Volunteering">Volunteering</option>
-              <option value="Partnership">Partnership</option>
-              <option value="Media">Media</option>
+              <option value="General Inquiry" data-i18n="form-topic-general">General Inquiry</option>
+              <option value="Donation Question" data-i18n="form-topic-donation">Donation Question</option>
+              <option value="Volunteering" data-i18n="form-topic-volunteer">Volunteering</option>
+              <option value="Partnership" data-i18n="form-topic-partner">Partnership</option>
+              <option value="Media" data-i18n="form-topic-media">Media</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="5" placeholder="Your message" required></textarea>
+            <label for="cf-message" data-i18n="form-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Your message" data-i18n-placeholder="form-message-placeholder" required></textarea>
           </div>
           <input type="hidden" name="_subject" value="New message from HIA website">
           <input type="hidden" name="_replyto" value="judmaria9@gmail.com">
-          <button type="submit" class="form-submit" id="formSubmitBtn">Send Message</button>
-          <div id="formSuccess" class="form-success" style="display:none;">
-            ✓ Message sent! We'll be in touch within 48 hours.
+          <button type="submit" class="form-submit" id="formSubmitBtn" data-i18n="form-submit">Send Message</button>
+          <div id="formSuccess" class="form-success" role="status" aria-live="polite" style="display:none;">
+            <span data-i18n="form-success">✓ Message sent! We'll be in touch within 48 hours.</span>
           </div>
-          <div id="formError" class="form-error" style="display:none;">
-            Your message didn't go through. Please email us directly at judmaria9@gmail.com and we'll respond within 48 hours.
+          <div id="formError" class="form-error" role="alert" style="display:none;">
+            <span data-i18n="form-error">Your message didn't go through. Please email us directly and we'll respond within 48 hours.</span>
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
+ </main>
 
 
 <footer id="contact" role="contentinfo">
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <a href="#top" class="brand">
-        <img src="" alt="H.I.A logo" class="hia-logo">
+        <img alt="H.I.A logo" class="hia-logo" width="73" height="84">
         <span class="brand-text">H.I.A<small>Hope International Association</small></span>
       </a>
       <p data-i18n="footer-about">A Geneva-based nonprofit supporting widows and orphans through education, healthcare, and community-driven programs that last.</p>
       <div class="social-row">
         <a href="https://www.facebook.com/Gloryeventmc" target="_blank" rel="noopener noreferrer" aria-label="Follow H.I.A on Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="#" aria-label="Instagram — coming soon" title="Instagram coming soon" style="opacity:.45;cursor:default;pointer-events:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="LinkedIn — coming soon" title="LinkedIn coming soon" style="opacity:.45;cursor:default;pointer-events:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96V21H9z"/></svg></a>
+        <span class="social-coming" data-i18n="social-coming">More channels coming soon</span>
       </div>
     </div>
     <div>
@@ -1102,7 +428,7 @@
       <ul>
         <li><a href="#mission" data-i18n="footer-link1">About Us</a></li>
         <li><a href="#programs" data-i18n="footer-link2">Our Programs</a></li>
-        <li><a href="#stories" data-i18n="footer-link3">Impact Stories</a></li>
+        <li><a href="#approach" data-i18n="footer-link3">Our approach</a></li>
         <li><a href="#donate" data-i18n="footer-link4">Donate</a></li>
       </ul>
     </div>
@@ -1115,60 +441,60 @@
         </li>
         <li class="contact-line">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.5a16 16 0 0 0 6 6l1.7-1.4a2 2 0 0 1 2.1-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.2 2.1z"/></svg>
-          +41 77 451 95 14
+          <a href="tel:+41774519514">+41 77 451 95 14</a>
         </li>
         <li class="contact-line">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
-          hopeinternationalassociation@gmail.com
+          <a href="mailto:hopeinternationalassociation@gmail.com">hopeinternationalassociation@gmail.com</a>
         </li>
       </ul>
     </div>
   </div>
   <div class="wrap footer-bottom">
     <span>© 2026 Hope International Association (H.I.A) — Via al Gagiuracs 12, CH-6528 Camorino · Reg. 482.5.021.9302</span>
-    <span><a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></span>
+    <span><a href="privacy.html" data-i18n="privacy-link">Privacy &amp; cookie details</a><button class="cookie-settings" type="button" onclick="showCookieSettings()" data-i18n="cookie-settings">Cookie settings</button></span>
   </div>
 </footer>
 
 <!-- ============ DONATE MODAL ============ -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3 data-i18n="modal-title">Make a Donation</h3>
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close donation dialog">✕</button>
+    <h3 id="modalTitle" data-i18n="modal-title">Make a Donation</h3>
     <p data-i18n="modal-p">Choose a method below to support widows and orphans through H.I.A.</p>
-    <div class="modal-tabs">
+    <div class="modal-tabs" role="tablist" aria-label="Donation method">
       
-      <button class="tab-btn active" data-tab="card">Card</button>
-      <button class="tab-btn" data-tab="paypal" data-i18n="modal-tab-paypal">PayPal</button>
-      <button class="tab-btn" data-tab="bank" data-i18n="modal-tab-bank">Bank Transfer</button>
-      <button class="tab-btn" data-tab="mobile" data-i18n="modal-tab-mobile">QR / Mobile</button>
+      <button class="tab-btn active" id="tab-card" role="tab" aria-controls="panel-card" aria-selected="true" tabindex="0" data-tab="card" data-i18n="modal-tab-card">Card</button>
+      <button class="tab-btn" id="tab-paypal" role="tab" aria-controls="panel-paypal" aria-selected="false" tabindex="-1" data-tab="paypal" data-i18n="modal-tab-paypal">PayPal</button>
+      <button class="tab-btn" id="tab-bank" role="tab" aria-controls="panel-bank" aria-selected="false" tabindex="-1" data-tab="bank" data-i18n="modal-tab-bank">Bank Transfer</button>
+      <button class="tab-btn" id="tab-mobile" role="tab" aria-controls="panel-mobile" aria-selected="false" tabindex="-1" data-tab="mobile" data-i18n="modal-tab-mobile">Other details</button>
     </div>
 
     
 
-    <div class="modal-panel active" data-panel="card">
-      <p style="margin-bottom:10px;">Choose an amount (CHF):</p>
-      <div class="amount-row">
-        <button class="amt-btn" data-amount="20">20</button>
-        <button class="amt-btn active" data-amount="50">50</button>
-        <button class="amt-btn" data-amount="100">100</button>
-        <button class="amt-btn" data-amount="250">250</button>
+    <div class="modal-panel active" id="panel-card" role="tabpanel" aria-labelledby="tab-card" data-panel="card">
+        <p style="margin-bottom:10px;" id="amountLabel" data-i18n="modal-amount-label">Choose an amount (CHF):</p>
+      <div class="amount-row" role="group" aria-labelledby="amountLabel">
+        <button type="button" class="amt-btn" aria-pressed="false" data-amount="20">20</button>
+        <button type="button" class="amt-btn active" aria-pressed="true" data-amount="50">50</button>
+        <button type="button" class="amt-btn" aria-pressed="false" data-amount="100">100</button>
+        <button type="button" class="amt-btn" aria-pressed="false" data-amount="250">250</button>
       </div>
       <div id="stripe-card-element" style="margin-top:18px;padding:13px;border:1px solid var(--line);border-radius:2px;background:rgba(205,166,70,.04);">
         <!-- Stripe Card Element mounts here -->
       </div>
       <div id="stripe-errors" style="color:#e55;font-size:12px;margin-top:8px;"></div>
-      <button class="modal-submit" id="stripePayBtn" onclick="handleStripePayment()" style="margin-top:18px;">
+      <button class="modal-submit" id="stripePayBtn" onclick="handleStripePayment()" data-i18n="card-pay" style="margin-top:18px;">
         Pay with Card
       </button>
     </div>
 
-    <div class="modal-panel" data-panel="paypal">
+    <div class="modal-panel" id="panel-paypal" role="tabpanel" aria-labelledby="tab-paypal" data-panel="paypal">
       <p><span data-i18n="modal-paypal-p">Donate securely via PayPal to</span> <strong style="color:var(--gold-light)">judmaria9@gmail.com</strong></p>
       <button class="modal-submit" onclick="window.open('https://www.paypal.com/paypalme/judmaria9','_blank')" data-i18n="modal-paypal-btn">Donate with PayPal</button>
     </div>
 
-    <div class="modal-panel" data-panel="bank">
+    <div class="modal-panel" id="panel-bank" role="tabpanel" aria-labelledby="tab-bank" data-panel="bank">
       <table class="bank-table">
         <tr><td>Beneficiary</td><td>Hope International Association<br><small style="color:var(--cream-dim);font-size:11px;">(Geneva-based Non-Profit Organization)</small></td></tr>
         <tr><td>Bank</td><td>PostFinance</td></tr>
@@ -1179,692 +505,25 @@
 <tr><td>Country</td><td>Switzerland</td></tr>
       </table>
       <button class="modal-submit" style="margin-top:22px;" onclick="copyBank()" data-i18n="modal-bank-btn">Copy Bank Details</button>
+      <p id="bank-copy-feedback" role="status" aria-live="polite" style="margin-top:8px;"></p>
     </div>
 
-    <div class="modal-panel" data-panel="mobile">
-      <p>Send instantly via PayPal or bank transfer using the details below.</p>
+    <div class="modal-panel" id="panel-mobile" role="tabpanel" aria-labelledby="tab-mobile" data-panel="mobile">
+      <p data-i18n="modal-mobile-instructions">Choose PayPal or bank transfer for giving options.</p>
       <div style="display:flex;justify-content:center;padding:20px 0;">
         <div style="text-align:center;padding:10px 0;">
-        <p style="font-size:13px;color:var(--gold-light);margin-bottom:12px;">PayPal: judmaria9@gmail.com</p>
-        <p style="font-size:12px;color:var(--cream-dim);line-height:1.8;">Or bank transfer:<br>IBAN: CH05 0900 0000 1679 9930 3<br>BIC: POFICHBEXXX<br>Bank: PostFinance</p>
+        <p style="font-size:13px;color:var(--gold-light);margin-bottom:12px;"><span data-i18n="payment-paypal-label">PayPal</span>: judmaria9@gmail.com</p>
+        <p style="font-size:12px;color:var(--cream-dim);line-height:1.8;"><span data-i18n="payment-bank-label">Bank transfer</span><br>IBAN: CH05 0900 0000 1679 9930 3<br>BIC: POFICHBEXXX<br><span data-i18n="payment-bank-name">Bank</span>: PostFinance</p>
       </div>
       </div>
     </div>
   </div>
 </div>
 
-<script>
-
-  function copyBank(){
-    const txt = `Beneficiary: Hope International Association (Geneva-based Non-Profit Organization)
-Bank: PostFinance
-Account Number: 16-799930-3
-IBAN: CH05 0900 0000 1679 9930 3
-BIC/SWIFT: POFICHBEXXX
-Currency: CHF (Swiss Franc)
-Country: Switzerland`;
-    navigator.clipboard.writeText(txt).then(()=>{
-      const btn = document.querySelector('[onclick="copyBank()"]');
-      const orig = btn.textContent;
-      btn.textContent = '✓ Copied to clipboard!';
-      setTimeout(()=>btn.textContent=orig, 2500);
-    }).catch(()=>alert('Bank details:\n\n' + txt));
-  }
-
-  // mobile drawer
-  const menuToggle = document.getElementById('menuToggle');
-  const drawer = document.getElementById('drawer');
-  const scrim = document.getElementById('scrim');
-  function toggleDrawer(open){
-    drawer.classList.toggle('open', open);
-    scrim.classList.toggle('open', open);
-    menuToggle.setAttribute('aria-expanded', String(open));
-    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-  }
-  menuToggle.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('open')));
-  scrim.addEventListener('click', () => toggleDrawer(false));
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
-
-  // donate modal
-  const overlay = document.getElementById('modalOverlay');
-  function openModal(method){
-    overlay.classList.add('open');
-    setTab(method || 'card');
-    // Initialize Stripe immediately when modal opens
-    setTimeout(initStripe, 100);
-  }
-  function closeModal(){ overlay.classList.remove('open'); }
-  overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
-
-  function setTab(name){
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
-    document.querySelectorAll('.modal-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === name));
-  }
-  document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
-
-  // amount buttons
-  document.querySelectorAll('.amt-btn').forEach(b => {
-    b.addEventListener('click', () => {
-      document.querySelectorAll('.amt-btn').forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-    });
-  });
-
-  // language toggle (placeholder behavior)
-  // Language switching handled by applyLang() below
-
-  // scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, {threshold:0.15});
-  revealEls.forEach(el => io.observe(el));
-
-  // count-up stats
-  const statsEls = document.querySelectorAll('.stat-num');
-  const targets = [204, 850, 6, 12]; // widows supported, children sponsored, countries reached, active partnerships
-  let counted = false;
-  const statsSection = document.querySelector('.stats');
-  const statIO = new IntersectionObserver((entries) => {
-    entries.forEach(en => {
-      if(en.isIntersecting && !counted){
-        counted = true;
-        statsEls.forEach((el, i) => {
-          const target = targets[i] || 0;
-          let cur = 0;
-          const step = Math.max(1, Math.round(target/60));
-          const tick = setInterval(() => {
-            cur += step;
-            if(cur >= target){ cur = target; clearInterval(tick); }
-            el.textContent = cur;
-          }, 22);
-        });
-      }
-    });
-  }, {threshold:0.4});
-  if(statsSection) statIO.observe(statsSection);
-
-
-  // ---- CONTACT FORM (Formspree) ----
-  const contactForm = document.getElementById('contactForm');
-  if(contactForm){
-    contactForm.addEventListener('submit', async function(e){
-      e.preventDefault();
-      const btn = document.getElementById('formSubmitBtn');
-      const success = document.getElementById('formSuccess');
-      const error = document.getElementById('formError');
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      success.style.display = 'none';
-      error.style.display = 'none';
-      try{
-        const res = await fetch(contactForm.action, {
-          method:'POST',
-          body: new FormData(contactForm),
-          headers:{'Accept':'application/json'}
-        });
-        if(res.ok){
-          success.style.display = 'block';
-          contactForm.reset();
-          btn.textContent = '✓ Sent!';
-        } else {
-          throw new Error('Form error');
-        }
-      } catch(err){
-        error.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
-      }
-    });
-  }
-
-  // ---- STRIPE PAYMENT ----
-  // TO ACTIVATE: replace 'YOUR_STRIPE_PUBLISHABLE_KEY' with your real key from
-  // https://dashboard.stripe.com/apikeys (starts with pk_live_ or pk_test_)
-  const STRIPE_KEY = 'pk_live_51TjZpAKbDaOJhVN0giZdAnW3mO5OTRxQ2dlVuOzclo2ZGi6i13ajp0CIgfH6gKArWoJhVvuIk70DkoKPU9MBPO2i00KpGKTKEK';
-  let stripe = null, cardElement = null;
-
-  function initStripe(){
-    if(STRIPE_KEY === 'YOUR_STRIPE_PUBLISHABLE_KEY') return; // not yet configured
-    stripe = Stripe(STRIPE_KEY);
-    const elements = stripe.elements();
-    cardElement = elements.create('card', {
-      style:{
-        base:{
-          color:'#f3ecd9', fontFamily:'Jost, sans-serif', fontSize:'15px',
-          '::placeholder':{color:'#8a6a26'}
-        }
-      }
-    });
-    const mount = document.getElementById('stripe-card-element');
-    if(mount){
-      mount.innerHTML = '';
-      cardElement.mount('#stripe-card-element');
-    }
-  }
-
-  async function handleStripePayment(){
-    if(!stripe || !cardElement){
-      // Stripe still loading — try to init and retry
-      initStripe();
-      const btn = document.getElementById('stripePayBtn');
-      btn.textContent = 'Loading card form...';
-      setTimeout(() => { btn.textContent = 'Pay with Card'; btn.disabled = false; }, 2000);
-      return;
-    }
-    const activeAmt = document.querySelector('.amt-btn.active');
-    const amount = activeAmt ? parseInt(activeAmt.dataset.amount) : 50;
-    const btn = document.getElementById('stripePayBtn');
-    const errDiv = document.getElementById('stripe-errors');
-    btn.disabled = true;
-    btn.textContent = 'Processing...';
-    errDiv.textContent = '';
-
-    try {
-      // 1. Create PaymentIntent via Netlify function
-      const res = await fetch('/.netlify/functions/create-payment-intent', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount, currency: 'chf' })
-      });
-      const { clientSecret, error: serverError } = await res.json();
-      if (serverError) throw new Error(serverError);
-
-      // 2. Confirm card payment
-      const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: { card: cardElement }
-      });
-
-      if (error) {
-        errDiv.textContent = error.message || "Your card couldn't be charged. Please check your details and try again.";
-        btn.disabled = false;
-        btn.textContent = 'Pay with Card';
-      } else if (paymentIntent.status === 'succeeded') {
-        btn.textContent = '✓ Thank you!';
-        btn.style.background = 'linear-gradient(135deg,#5FA87A,#2E7A50)';
-        errDiv.style.color = '#8fcca0';
-        errDiv.textContent = 'Donation of CHF ' + amount + ' received. Thank you for your generosity!';
-        cardElement.clear();
-        setTimeout(() => closeModal(), 3000);
-      }
-    } catch(err) {
-      errDiv.textContent = "We couldn't process your card. You haven't been charged — please try PayPal or Bank Transfer instead.";
-      btn.disabled = false;
-      btn.textContent = 'Pay with Card';
-    }
-  }
-
-  // Init stripe on page load and when card tab is opened
-  window.addEventListener('load', () => setTimeout(initStripe, 500));
-  document.querySelectorAll('.tab-btn').forEach(b => {
-    b.addEventListener('click', () => {
-      if(b.dataset.tab === 'card') initStripe();
-    });
-  });
-
-
-
-  // ---- COOKIE BANNER ----
-  function acceptCookies(){
-    localStorage.setItem('hia_cookies','accepted');
-    document.getElementById('cookieBanner').style.display='none';
-  }
-  function declineCookies(){
-    localStorage.setItem('hia_cookies','declined');
-    document.getElementById('cookieBanner').style.display='none';
-  }
-  if(!localStorage.getItem('hia_cookies')){
-    setTimeout(()=>{
-      document.getElementById('cookieBanner').style.display='block';
-    }, 1500);
-  }
-
-  // ---- STAGGERED CARD REVEAL ----
-  const cardEls = document.querySelectorAll('.reveal-card');
-  const cardIO = new IntersectionObserver((entries) => {
-    entries.forEach(en => {
-      if(en.isIntersecting){ en.target.classList.add('in'); cardIO.unobserve(en.target); }
-    });
-  }, {threshold:0.12});
-  cardEls.forEach(el => cardIO.observe(el));
-
-
-  // ========== TRANSLATIONS ==========
-
-  const LANG = {
-    en: {
-      'nav-about': `About`,
-      'nav-programs': `Programs`,
-      'nav-stories': `Stories`,
-      'nav-partners': `Partners`,
-      'nav-contact': `Contact`,
-      'nav-donate': `Donate Now`,
-      'hero-h1': `Hope <em>is</em> life.`,
-      'hero-tagline': `Help me help them.`,
-      'hero-lede': `Hope International Association is a Geneva-based nonprofit standing beside widows and orphans around the world — with education, healthcare, livelihood support, and a community that does not look away.`,
-      'hero-btn-mission': `Our Mission`,
-      'mission-eyebrow': `Our Mission`,
-      'mission-title': `Loss should never be<br><em>a life sentence.</em>`,
-      'mission-p1': `When a husband or father is lost, a family's entire foundation can collapse overnight — income, housing, education, and security all at risk at once. Hope International Association exists to close that gap.`,
-      'mission-p2': `We are not a relief organization that disappears once the crisis fades from the headlines. We are a <strong>long-term partner</strong> in rebuilding — through scholarships, microfinance, healthcare access, and vocational training that help widows regain independence and give orphaned children a real path forward.`,
-      'mission-p3': `Every franc raised goes toward a person, a family, a future — never toward abstraction.`,
-      'mission-sig': `Hope International Association`,
-      'mission-sig-small': `Founder &amp; President — H.I.A · Geneva`,
-      'pillar1-num': `01 — Immediate Relief`,
-      'pillar1-title': `When crisis hits first`,
-      'pillar1-p': `Emergency support for widows and orphans facing housing insecurity, hunger, or sudden medical need.`,
-      'pillar2-num': `02 — Education &amp; Empowerment`,
-      'pillar2-title': `Building independence`,
-      'pillar2-p': `Scholarships, vocational training, and microfinance that help families stand on their own again.`,
-      'pillar3-num': `03 — Long-Term Care`,
-      'pillar3-title': `Hope that continues`,
-      'pillar3-p': `Ongoing health services, mentorship, and community partnerships — support that doesn't end after one gift.`,
-      'video-eyebrow': `Our Story`,
-      'video-title': `See the <em>hope</em> we bring.`,
-      'video-lede': `A message from Hope International Association — who we are, what we do, and why it matters.`,
-      'gallery-eyebrow': `From The Field`,
-      'gallery-title': `Faces of <em>hope.</em>`,
-      'gallery-lede': `Every face tells a story. Every story is a life changed.`,
-      'programs-eyebrow': `What We Do`,
-      'programs-title': `Support that follows<br><em>real need.</em>`,
-      'programs-lede': `Our programs are structured around the real, sequential needs of the families we serve — from emergency stabilization to lasting independence.`,
-      'prog1-title': `Emergency Relief`,
-      'prog1-p': `Housing support, food security, and urgent medical care when a family needs it most.`,
-      'prog2-title': `Education &amp; Scholarships`,
-      'prog2-p': `School fees, supplies, and tuition for orphaned children — and continuing education for widows.`,
-      'prog3-title': `Microfinance &amp; Livelihood`,
-      'prog3-p': `Small loans and business training that build lasting financial independence for widows.`,
-      'prog4-title': `Health Services`,
-      'prog4-p': `Access to medical care, screenings, and ongoing wellness support for families in need.`,
-      'prog5-title': `Vocational Training`,
-      'prog5-p': `Practical, locally relevant skills — tailoring, agriculture, trades — built around real opportunity.`,
-      'prog6-title': `Community &amp; Mentorship`,
-      'prog6-p': `Support networks connecting widows and giving orphaned children mentors as they grow.`,
-      'stats-eyebrow': `Impact`,
-      'stats-title': `Numbers behind <em>every name.</em>`,
-      'stat1-label': `Widows supported`,
-      'stat2-label': `Children sponsored`,
-      'stat3-label': `Countries reached`,
-      'stat4-label': `Active partnerships`,
-      'story-eyebrow': `A Story of Hope`,
-      'story-quote': `It's not how much we give, but how much love we put into giving.`,
-      'story-cite': `Mother Teresa`,
-      'donate-eyebrow': `Give`,
-      'donate-title': `Select how you'd like<br><em>to give.</em>`,
-      'donate-lede': `Every gift — large or small — goes directly toward emergency relief, education, healthcare, and livelihood training for widows and orphans.`,
-      'method-paypal-title': `PayPal`,
-      'method-paypal-p': `Fast &amp; secure`,
-      'method-bank-title': `Bank Transfer`,
-      'method-bank-p': `Direct &amp; traceable`,
-      'method-mobile-title': `QR / Mobile`,
-      'method-mobile-p': `Scan &amp; give`,
-      'donate-legal': `Hope International Association (H.I.A) is a registered nonprofit organization based in Switzerland (Reg. No. 482.5.021.9302). Donations processed via PostFinance (IBAN: CH05 0900 0000 1679 9930 3) or PayPal (judmaria9@gmail.com).`,
-      'partners-eyebrow': `Partners`,
-      'partners-title': `Stronger <em>together.</em>`,
-      'cta-title': `You can be <em>someone's hope</em> today.`,
-      'cta-btn-involved': `Get Involved`,
-      'footer-about': `A Geneva-based nonprofit supporting widows and orphans through education, healthcare, and community-driven programs that last.`,
-      'footer-links-title': `Quick Links`,
-      'footer-link1': `About Us`,
-      'footer-link2': `Our Programs`,
-      'footer-link3': `Impact Stories`,
-      'footer-link4': `Donate`,
-      'footer-contact-title': `Contact`,
-      'modal-title': `Make a Donation`,
-      'modal-p': `Choose a method below to support widows and orphans through H.I.A.`,
-      'modal-tab-paypal': `PayPal`,
-      'modal-tab-bank': `Bank Transfer`,
-      'modal-tab-mobile': `QR / Mobile`,
-      'modal-paypal-p': `Donate securely via PayPal to`,
-      'modal-paypal-btn': `Donate with PayPal`,
-      'modal-bank-btn': `Copy Bank Details`,
-      'modal-mobile-p': `Scan with PayPal or banking app:`,
-    },
-    fr: {
-      'nav-about': `À propos`,
-      'nav-programs': `Programmes`,
-      'nav-stories': `Témoignages`,
-      'nav-partners': `Partenaires`,
-      'nav-contact': `Contact`,
-      'nav-donate': `Faire un don`,
-      'hero-h1': `L'espoir <em>est</em> la vie.`,
-      'hero-tagline': `Aidez-moi à les aider.`,
-      'hero-lede': `L'Association Internationale d'Espoir est une organisation à but non lucratif basée à Genève, engagée auprès des veuves et des orphelins à travers le monde — par l'éducation, les soins de santé, le soutien aux moyens de subsistance et une communauté qui ne détourne pas le regard.`,
-      'hero-btn-mission': `Notre Mission`,
-      'mission-eyebrow': `Notre Mission`,
-      'mission-title': `La perte ne devrait jamais être<br><em>une condamnation à vie.</em>`,
-      'mission-p1': `Quand un mari ou un père disparaît, toute la fondation d'une famille peut s'effondrer du jour au lendemain — revenus, logement, éducation et sécurité, tout est menacé à la fois. H.I.A existe pour combler ce vide.`,
-      'mission-p2': `Nous ne sommes pas une organisation d'aide qui disparaît une fois que la crise sort des manchettes. Nous sommes un <strong>partenaire à long terme</strong> dans la reconstruction — grâce à des bourses, des microfinances, l'accès aux soins de santé et une formation professionnelle qui aide les veuves à retrouver leur indépendance.`,
-      'mission-p3': `Chaque franc collecté va vers une personne, une famille, un avenir — jamais vers l'abstraction.`,
-      'mission-sig': `Hope International Association`,
-      'mission-sig-small': `Fondateur &amp; Président — H.I.A · Genève`,
-      'pillar1-num': `01 — Secours d'urgence`,
-      'pillar1-title': `Quand la crise frappe en premier`,
-      'pillar1-p': `Soutien d'urgence aux veuves et aux orphelins confrontés à l'insécurité du logement, à la faim ou à un besoin médical soudain.`,
-      'pillar2-num': `02 — Éducation &amp; Autonomisation`,
-      'pillar2-title': `Construire l'indépendance`,
-      'pillar2-p': `Bourses, formation professionnelle et microfinance qui aident les familles à se tenir de nouveau sur leurs propres pieds.`,
-      'pillar3-num': `03 — Soins à long terme`,
-      'pillar3-title': `Un espoir qui dure`,
-      'pillar3-p': `Services de santé continus, mentorat et partenariats communautaires — un soutien qui ne s'arrête pas après un seul don.`,
-      'video-eyebrow': `Notre histoire`,
-      'video-title': `Voyez <em>l'espoir</em> que nous apportons.`,
-      'video-lede': `Un message de l'Association Internationale d'Espoir — qui nous sommes, ce que nous faisons et pourquoi c'est important.`,
-      'gallery-eyebrow': `Sur le terrain`,
-      'gallery-title': `Visages de <em>l'espoir.</em>`,
-      'gallery-lede': `Chaque visage raconte une histoire. Chaque histoire est une vie transformée.`,
-      'programs-eyebrow': `Ce que nous faisons`,
-      'programs-title': `Un soutien adapté aux<br><em>besoins réels.</em>`,
-      'programs-lede': `Nos programmes sont structurés autour des besoins réels et séquentiels des familles que nous servons — de la stabilisation d'urgence à l'indépendance durable.`,
-      'prog1-title': `Secours d'urgence`,
-      'prog1-p': `Soutien au logement, sécurité alimentaire et soins médicaux urgents quand une famille en a le plus besoin.`,
-      'prog2-title': `Éducation &amp; Bourses`,
-      'prog2-p': `Frais de scolarité, fournitures et droits universitaires pour les enfants orphelins — et formation continue pour les veuves.`,
-      'prog3-title': `Microfinance &amp; Moyens de subsistance`,
-      'prog3-p': `Petits prêts et formation commerciale qui construisent une indépendance financière durable pour les veuves.`,
-      'prog4-title': `Services de santé`,
-      'prog4-p': `Accès aux soins médicaux, dépistages et soutien au bien-être continu pour les familles dans le besoin.`,
-      'prog5-title': `Formation professionnelle`,
-      'prog5-p': `Compétences pratiques et localement pertinentes — couture, agriculture, métiers — construites autour de vraies opportunités.`,
-      'prog6-title': `Communauté &amp; Mentorat`,
-      'prog6-p': `Réseaux de soutien connectant les veuves et donnant aux enfants orphelins des mentors au fil de leur croissance.`,
-      'stats-eyebrow': `Impact`,
-      'stats-title': `Des chiffres derrière <em>chaque nom.</em>`,
-      'stat1-label': `Veuves soutenues`,
-      'stat2-label': `Enfants parrainés`,
-      'stat3-label': `Pays touchés`,
-      'stat4-label': `Partenariats actifs`,
-      'story-eyebrow': `Une histoire d'espoir`,
-      'story-quote': `Ce n'est pas combien nous donnons, mais combien d'amour nous mettons dans notre don.`,
-      'story-cite': `Mère Teresa`,
-      'donate-eyebrow': `Donner`,
-      'donate-title': `Choisissez comment<br><em>vous souhaitez donner.</em>`,
-      'donate-lede': `Chaque don — grand ou petit — va directement vers les secours d'urgence, l'éducation, les soins de santé et la formation professionnelle pour les veuves et les orphelins.`,
-      'method-paypal-title': `PayPal`,
-      'method-paypal-p': `Rapide &amp; sécurisé`,
-      'method-bank-title': `Virement bancaire`,
-      'method-bank-p': `Direct &amp; traçable`,
-      'method-mobile-title': `QR / Mobile`,
-      'method-mobile-p': `Scanner &amp; donner`,
-      'donate-legal': `Hope International Association (H.I.A) est une organisation à but non lucratif enregistrée en Suisse (N° d'immatriculation : 482.5.021.9302). Les dons sont traités via PostFinance (IBAN : CH05 0900 0000 1679 9930 3) ou PayPal (judmaria9@gmail.com).`,
-      'partners-eyebrow': `Partenaires`,
-      'partners-title': `Plus forts <em>ensemble.</em>`,
-      'cta-title': `Vous pouvez être <em>l'espoir de quelqu'un</em> aujourd'hui.`,
-      'cta-btn-involved': `S'impliquer`,
-      'footer-about': `Une organisation à but non lucratif basée à Genève, soutenant les veuves et les orphelins par l'éducation, les soins de santé et des programmes communautaires durables.`,
-      'footer-links-title': `Liens rapides`,
-      'footer-link1': `À propos`,
-      'footer-link2': `Nos programmes`,
-      'footer-link3': `Témoignages`,
-      'footer-link4': `Faire un don`,
-      'footer-contact-title': `Contact`,
-      'modal-title': `Faire un don`,
-      'modal-p': `Choisissez une méthode ci-dessous pour soutenir les veuves et orphelins via H.I.A.`,
-      'modal-tab-paypal': `PayPal`,
-      'modal-tab-bank': `Virement bancaire`,
-      'modal-tab-mobile': `QR / Mobile`,
-      'modal-paypal-p': `Donnez en toute sécurité via PayPal à`,
-      'modal-paypal-btn': `Donner via PayPal`,
-      'modal-bank-btn': `Copier les coordonnées bancaires`,
-      'modal-mobile-p': `Scannez avec PayPal ou votre application bancaire :`,
-    },
-
-    it: {
-      'nav-about': `Chi siamo`,
-      'nav-programs': `Programmi`,
-      'nav-stories': `Storie`,
-      'nav-partners': `Partner`,
-      'nav-contact': `Contatto`,
-      'nav-donate': `Dona ora`,
-      'hero-h1': `La speranza <em>è</em> vita.`,
-      'hero-tagline': `Aiutami ad aiutarli.`,
-      'hero-lede': `Hope International Association è un'organizzazione non profit con sede a Ginevra, al fianco di vedove e orfani in tutto il mondo — con istruzione, assistenza sanitaria, supporto ai mezzi di sussistenza e una comunità che non guarda altrove.`,
-      'hero-btn-mission': `La nostra missione`,
-      'mission-eyebrow': `La nostra missione`,
-      'mission-title': `La perdita non dovrebbe mai essere<br><em>una condanna a vita.</em>`,
-      'mission-p1': `Quando si perde un marito o un padre, l'intera base di una famiglia può crollare da un giorno all'altro — reddito, alloggio, istruzione e sicurezza tutti a rischio insieme. Hope International Association esiste per colmare questo vuoto.`,
-      'mission-p2': `Non siamo un'organizzazione di soccorso che scompare quando la crisi esce dai titoli. Siamo un <strong>partner a lungo termine</strong> nella ricostruzione — attraverso borse di studio, microfinanza, accesso alle cure sanitarie e formazione professionale che aiutano le vedove a riconquistare l'indipendenza e offrono ai bambini orfani un vero percorso da seguire.`,
-      'mission-p3': `Ogni franco raccolto va verso una persona, una famiglia, un futuro — mai verso l'astrazione.`,
-      'mission-sig': `Hope International Association`,
-      'mission-sig-small': `Fondatore &amp; Presidente — H.I.A · Ginevra`,
-      'pillar1-num': `01 — Soccorso immediato`,
-      'pillar1-title': `Quando la crisi colpisce per prima`,
-      'pillar1-p': `Supporto di emergenza per vedove e orfani che affrontano insicurezza abitativa, fame o un bisogno medico improvviso.`,
-      'pillar2-num': `02 — Istruzione &amp; Empowerment`,
-      'pillar2-title': `Costruire l'indipendenza`,
-      'pillar2-p': `Borse di studio, formazione professionale e microfinanza che aiutano le famiglie a rimettersi in piedi da sole.`,
-      'pillar3-num': `03 — Assistenza a lungo termine`,
-      'pillar3-title': `Una speranza che continua`,
-      'pillar3-p': `Servizi sanitari continui, tutoraggio e partnership comunitarie — un supporto che non finisce dopo un solo dono.`,
-      'video-eyebrow': `La nostra storia`,
-      'video-title': `Guarda la <em>speranza</em> che portiamo.`,
-      'video-lede': `Un messaggio da Hope International Association — chi siamo, cosa facciamo e perché è importante.`,
-      'gallery-eyebrow': `Dal campo`,
-      'gallery-title': `Volti di <em>speranza.</em>`,
-      'gallery-lede': `Ogni volto racconta una storia. Ogni storia è una vita cambiata.`,
-      'programs-eyebrow': `Cosa facciamo`,
-      'programs-title': `Un supporto che segue<br><em>bisogni reali.</em>`,
-      'programs-lede': `I nostri programmi sono strutturati attorno ai bisogni reali e progressivi delle famiglie che serviamo — dalla stabilizzazione d'emergenza all'indipendenza duratura.`,
-      'prog1-title': `Soccorso d'emergenza`,
-      'prog1-p': `Supporto abitativo, sicurezza alimentare e cure medico urgenti quando una famiglia ne ha più bisogno.`,
-      'prog2-title': `Istruzione &amp; Borse di studio`,
-      'prog2-p': `Tasse scolastiche, materiali e iscrizione per i bambini orfani — e formazione continua per le vedove.`,
-      'prog3-title': `Microfinanza &amp; Mezzi di sussistenza`,
-      'prog3-p': `Piccoli prestiti e formazione imprenditoriale che costruiscono un'indipendenza finanziaria duratura per le vedove.`,
-      'prog4-title': `Servizi sanitari`,
-      'prog4-p': `Accesso alle cure medico, screening e supporto continuo al benessere per le famiglie bisognose.`,
-      'prog5-title': `Formazione professionale`,
-      'prog5-p': `Competenze pratiche e localmente rilevanti — sartoria, agricoltura, mestieri — costruite attorno a vere opportunità.`,
-      'prog6-title': `Comunità &amp; Tutoraggio`,
-      'prog6-p': `Reti di supporto che collegano le vedove e offrono ai bambini orfani dei mentori durante la crescita.`,
-      'stats-eyebrow': `Impatto`,
-      'stats-title': `Numeri dietro <em>ogni nome.</em>`,
-      'stat1-label': `Vedove supportate`,
-      'stat2-label': `Bambini sponsorizzati`,
-      'stat3-label': `Paesi raggiunti`,
-      'stat4-label': `Partnership attive`,
-      'story-eyebrow': `Una storia di speranza`,
-      'story-quote': `Non è quanto doniamo, ma quanto amore mettiamo nel donare.`,
-      'story-cite': `Madre Teresa`,
-      'donate-eyebrow': `Dona`,
-      'donate-title': `Scegli come<br><em>vuoi donare.</em>`,
-      'donate-lede': `Ogni dono — grande o piccolo — va direttamente al soccorso d'emergenza, all'istruzione, all'assistenza sanitaria e alla formazione professionale per vedove e orfani.`,
-      'method-paypal-title': `PayPal`,
-      'method-paypal-p': `Rapido &amp; sicuro`,
-      'method-bank-title': `Bonifico bancario`,
-      'method-bank-p': `Diretto &amp; tracciabile`,
-      'method-mobile-title': `QR / Mobile`,
-      'method-mobile-p': `Scansiona &amp; dona`,
-      'donate-legal': `Hope International Association (H.I.A) è un'organizzazione non profit registrata in Svizzera (N. reg. 482.5.021.9302). Le donazioni sono elaborate tramite PostFinance (IBAN: CH05 0900 0000 1679 9930 3) o PayPal (judmaria9@gmail.com).`,
-      'partners-eyebrow': `Partner`,
-      'partners-title': `Più forti <em>insieme.</em>`,
-      'cta-title': `Puoi essere <em>la speranza di qualcuno</em> oggi.`,
-      'cta-btn-involved': `Partecipa`,
-      'footer-about': `Un'organizzazione non profit con sede a Ginevra che supporta vedove e orfani attraverso istruzione, assistenza sanitaria e programmi comunitari duraturi.`,
-      'footer-links-title': `Link rapidi`,
-      'footer-link1': `Chi siamo`,
-      'footer-link2': `I nostri programmi`,
-      'footer-link3': `Storie di impatto`,
-      'footer-link4': `Dona`,
-      'footer-contact-title': `Contatto`,
-      'modal-title': `Fai una donazione`,
-      'modal-p': `Scegli un metodo qui sotto per supportare vedove e orfani tramite H.I.A.`,
-      'modal-tab-paypal': `PayPal`,
-      'modal-tab-bank': `Bonifico bancario`,
-      'modal-tab-mobile': `QR / Mobile`,
-      'modal-paypal-p': `Dona in modo sicuro tramite PayPal a`,
-      'modal-paypal-btn': `Dona con PayPal`,
-      'modal-bank-btn': `Copia i dati bancari`,
-      'modal-mobile-p': `Scansiona con PayPal o la tua app bancaria:`,
-    },
-
-    es: {
-      'nav-about': `Quienes somos`,
-      'nav-programs': `Programas`,
-      'nav-stories': `Historias`,
-      'nav-partners': `Socios`,
-      'nav-contact': `Contacto`,
-      'nav-donate': `Donar ahora`,
-      'hero-h1': `La esperanza <em>es</em> vida.`,
-      'hero-tagline': `Ayudame a ayudarlos.`,
-      'hero-lede': `Hope International Association es una organizacion sin fines de lucro con sede en Ginebra, junto a viudas y huerfanos en todo el mundo.`,
-      'hero-btn-mission': `Nuestra mision`,
-      'mission-eyebrow': `Nuestra mision`,
-      'mission-title': `La perdida nunca deberia ser<br><em>una condena de por vida.</em>`,
-      'mission-p1': `Cuando se pierde un esposo o padre, toda la base de una familia puede derrumbarse de la noche a la manana. H.I.A existe para cerrar esa brecha.`,
-      'mission-p2': `No somos una organizacion de socorro que desaparece. Somos un <strong>socio a largo plazo</strong> en la reconstruccion.`,
-      'mission-p3': `Cada franco recaudado va hacia una persona, una familia, un futuro.`,
-      'mission-sig': `Hope International Association`,
-      'mission-sig-small': `Fundador &amp; Presidente — H.I.A · Ginebra`,
-      'pillar1-num': `01 — Ayuda inmediata`,
-      'pillar1-title': `Cuando la crisis golpea primero`,
-      'pillar1-p': `Apoyo de emergencia para viudas y huerfanos que enfrentan inseguridad habitacional o necesidades medicas.`,
-      'pillar2-num': `02 — Educacion &amp; Empoderamiento`,
-      'pillar2-title': `Construyendo independencia`,
-      'pillar2-p': `Becas, formacion profesional y microfinanzas que ayudan a las familias a sostenerse.`,
-      'pillar3-num': `03 — Atencion a largo plazo`,
-      'pillar3-title': `Una esperanza que continua`,
-      'pillar3-p': `Servicios de salud continuos, tutoria y alianzas comunitarias duraderas.`,
-      'gallery-eyebrow': `Desde el campo`,
-      'gallery-title': `Rostros de <em>esperanza.</em>`,
-      'gallery-lede': `Cada rostro cuenta una historia. Cada historia es una vida cambiada.`,
-      'programs-eyebrow': `Lo que hacemos`,
-      'programs-title': `Apoyo que sigue<br><em>las necesidades reales.</em>`,
-      'programs-lede': `Nuestros programas estan estructurados en torno a las necesidades reales de las familias que servimos.`,
-      'prog1-title': `Ayuda de emergencia`,
-      'prog1-p': `Apoyo de vivienda, seguridad alimentaria y atencion medica urgente.`,
-      'prog2-title': `Educacion &amp; Becas`,
-      'prog2-p': `Cuotas escolares y matricula para ninos huerfanos y educacion continua para viudas.`,
-      'prog3-title': `Microfinanzas &amp; Medios de vida`,
-      'prog3-p': `Prestamos y capacitacion que construyen independencia financiera para las viudas.`,
-      'prog4-title': `Servicios de salud`,
-      'prog4-p': `Acceso a atencion medica y apoyo continuo al bienestar para familias en necesidad.`,
-      'prog5-title': `Formacion profesional`,
-      'prog5-p': `Habilidades practicas — sastreria, agricultura, oficios — construidas en torno a oportunidades reales.`,
-      'prog6-title': `Comunidad &amp; Tutoria`,
-      'prog6-p': `Redes de apoyo que conectan a las viudas y dan mentores a los ninos huerfanos.`,
-      'stats-eyebrow': `Impacto`,
-      'stats-title': `Numeros detras de <em>cada nombre.</em>`,
-      'stat1-label': `Viudas apoyadas`,
-      'stat2-label': `Ninos patrocinados`,
-      'stat3-label': `Paises alcanzados`,
-      'stat4-label': `Alianzas activas`,
-      'story-eyebrow': `Una historia de esperanza`,
-      'story-quote': `No es cuanto damos, sino cuanto amor ponemos en dar.`,
-      'story-cite': `Madre Teresa`,
-      'donate-eyebrow': `Donar`,
-      'donate-title': `Elige como<br><em>quieres donar.</em>`,
-      'donate-lede': `Cada donativo va directamente hacia socorro de emergencia, educacion y atencion medica para viudas y huerfanos.`,
-      'method-paypal-title': `PayPal`,
-      'method-paypal-p': `Rapido &amp; seguro`,
-      'method-bank-title': `Transferencia bancaria`,
-      'method-bank-p': `Directa &amp; rastreable`,
-      'method-mobile-title': `QR / Movil`,
-      'method-mobile-p': `Escanea &amp; dona`,
-      'donate-legal': `Hope International Association (H.I.A) es una organizacion sin fines de lucro registrada en Suiza (N.reg. 482.5.021.9302).`,
-      'partners-eyebrow': `Socios`,
-      'partners-title': `Mas fuertes <em>juntos.</em>`,
-      'cta-title': `Puedes ser <em>la esperanza de alguien</em> hoy.`,
-      'cta-btn-involved': `Involucrate`,
-      'footer-about': `Una organizacion sin fines de lucro con sede en Ginebra que apoya a viudas y huerfanos.`,
-      'footer-links-title': `Enlaces rapidos`,
-      'footer-link1': `Quienes somos`,
-      'footer-link2': `Nuestros programas`,
-      'footer-link3': `Historias de impacto`,
-      'footer-link4': `Donar`,
-      'footer-contact-title': `Contacto`,
-      'modal-title': `Hacer una donacion`,
-      'modal-p': `Elige un metodo para apoyar a viudas y huerfanos a traves de H.I.A.`,
-      'modal-tab-paypal': `PayPal`,
-      'modal-tab-bank': `Transferencia bancaria`,
-      'modal-tab-mobile': `QR / Movil`,
-      'modal-paypal-p': `Dona de forma segura a traves de PayPal a`,
-      'modal-paypal-btn': `Donar con PayPal`,
-      'modal-bank-btn': `Copiar datos bancarios`,
-      'modal-mobile-p': `Escanea con PayPal o tu aplicacion bancaria:`,
-      'video-eyebrow': `Nuestra historia`,
-      'video-title': `Mira la <em>esperanza</em> que traemos.`,
-      'video-lede': `Un mensaje de Hope International Association — quienes somos y por que importa.`,
-    }
-  };
-
-    let currentLang = 'en';
-
-  function applyLang(lang) {
-    currentLang = lang;
-    const t = LANG[lang];
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) el.innerHTML = t[key];
-    });
-    // Update html lang attribute
-    document.documentElement.lang = lang;
-    // Update lang buttons
-    document.querySelectorAll('.lang button').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-  }
-
-  // ---- LANGUAGE MEMORY ----
-  // Remember user's language choice between visits
-  function applyLangAndRemember(lang) {
-    applyLang(lang);
-    localStorage.setItem('hia_lang', lang);
-  }
-
-  document.querySelectorAll('.lang button').forEach(b => {
-    b.addEventListener('click', () => applyLangAndRemember(b.dataset.lang));
-  });
-
-  const savedLang = localStorage.getItem('hia_lang');
-  if(savedLang && LANG[savedLang]) {
-    applyLangAndRemember(savedLang);
-  }
-  // ---- END LANGUAGE MEMORY ----
-
-  // ========== END TRANSLATIONS ==========
-
-
-  // Remove old lang alert
-</script>
-<script src="https://js.stripe.com/v3/"></script>
+<script src="main.js"></script>
 <script src="images.js"></script>
 
 
 
 </body>
 </html>
-<!-- Grafana Faro Real User Monitoring -->
-<script>
-  (function () {
-    var webSdkScript = document.createElement("script");
-    webSdkScript.src =
-      "https://unpkg.com/@grafana/faro-web-sdk@^1.4.0/dist/bundle/faro-web-sdk.iife.js";
-
-    webSdkScript.onload = () => {
-      window.GrafanaFaroWebSdk.initializeFaro({
-        url: "https://faro-collector-prod-us-east-6.grafana.net/collect/073ecfe0d472f44938c058c8ff6d615e",
-        app: {
-          name: "hia-hope",
-          version: "1.0.0",
-          environment: "production",
-        },
-      });
-
-      var webTracingScript = document.createElement("script");
-      webTracingScript.src =
-        "https://unpkg.com/@grafana/faro-web-tracing@^1.4.0/dist/bundle/faro-web-tracing.iife.js";
-
-      webTracingScript.onload = () => {
-        window.GrafanaFaroWebSdk.faro.instrumentations.add(
-          new window.GrafanaFaroWebTracing.TracingInstrumentation()
-        );
-      };
-
-      document.head.appendChild(webTracingScript);
-    };
-
-    document.head.appendChild(webSdkScript);
-  })();
-</script>
